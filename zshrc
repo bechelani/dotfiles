@@ -201,7 +201,7 @@ function box_name {
 # Git prompt
 # https://github.com/lyze/posh-git-sh
 
-. ~/git-prompt.sh
+. ~/GitHub/dotfiles/git-prompt.sh
 
 function current_pwd {
   echo $(pwd | sed -e "s,^$HOME,~,")
