@@ -1,4 +1,10 @@
-ProVim
-======
+# bechelani does dotfiles - forked from jldeen's repo
 
-Repository to hold dotfiles and scripts specific to ProVim
+### WSL Configuration
+Run the following to configure WSL from scratch...
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/jldeen/dotfiles/wsl/configure.sh)"
+```
+
+### Notes
+Your dotfiles are how you personalize your system. These are mine.
