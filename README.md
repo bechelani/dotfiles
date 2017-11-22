@@ -3,7 +3,7 @@
 ### WSL Configuration
 Run the following to configure WSL from scratch...
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/jldeen/dotfiles/wsl/configure.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/bechelani/dotfiles/wsl/configure.sh)"
 ```
 
 ### Notes
