@@ -6,9 +6,10 @@ autoload -U $HOME/.dotfiles/functions/*(:t)
 # Colours {{{
 #export LSCOLORS=Gxfxcxdxbxegedabagacad
 #export LS_COLORS=Gxfxcxdxbxegedabagacad
-export LSCOLORS=dxfxcxdxbxegedabagacad
-export LS_COLORS=dxfxcxdxbxegedabagacad
-#export LSCOLORS="exfxcxdxbxegedabagacad"
+#export LSCOLORS=dxfxcxdxbxegedabagacad
+#export LS_COLORS=dxfxcxdxbxegedabagacad
+export LSCOLORS="exfxcxdxbxegedabagacad"
+export LS_COLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
 autoload colors; colors
