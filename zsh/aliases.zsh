@@ -6,5 +6,5 @@ alias r="source ~/.zshrc"
 # alias ct="ctags -R --exclude=.git --exclude=node_modules"
 alias dotfiles="ls -a | grep '^\.' | grep --invert-match '\.DS_Store\|\.$'"
 # alias ls="ls -lhA -G"
-alias ll="ls -lhA -G"
+alias ll="ls -l -h -A -G"
 # alias git='hub'

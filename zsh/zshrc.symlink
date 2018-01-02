@@ -21,12 +21,14 @@ config_files=(~/.dotfiles/**/*.zsh)
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
 do
+  echo "Sourcing $file"
   source $file
 done
 
 # load everything but the path and completion files
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
+  echo "Sourcing $file"
   source $file
 done
 
@@ -37,11 +39,11 @@ compinit
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
 do
+  echo "Sourcing $file"
   source $file
 done
 
 unset config_files
-
 
 # Default username to hide "user@hostname" info
 DEFAULT_USER="mbechelani"
