@@ -35,7 +35,7 @@ echo ''
 echo "Now installing oh-my-zsh plugins..."
 echo ''
 git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
-git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
 
 # powerlevel9k install
@@ -67,21 +67,21 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-sy
 # echo ''
 # echo "Now installing vim wombat color scheme..."
 # echo ''
-# git clone https://github.com/sheerun/vim-wombat-scheme.git ~/.vim/colors/wombat 
+# git clone https://github.com/sheerun/vim-wombat-scheme.git ~/.vim/colors/wombat
 # mv ~/.vim/colors/wombat/colors/* ~/.vim/colors/
 
 # Midnight commander install
-echo ''
-echo "Now installing Midnight commander..."
-echo ''
-sudo apt-get install mc -y
+# echo ''
+# echo "Now installing Midnight commander..."
+# echo ''
+# sudo apt-get install mc -y
 
 # Bash color scheme
-echo ''
-echo "Now installing solarized dark WSL color scheme..."
-echo ''
-wget https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
-mv dircolors.256dark .dircolors
+# echo ''
+# echo "Now installing solarized dark WSL color scheme..."
+# echo ''
+# wget https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
+# mv dircolors.256dark .dircolors
 
 # Pull down personal dotfiles
 echo ''
@@ -89,7 +89,7 @@ read -p "Do you want to use bechelani's dotfiles? y/n" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    echo ''
+  echo ''
 	echo "Now pulling down bechelani dotfiles..."
 	git clone https://github.com/bechelani/dotfiles.git ~/.dotfiles
 	echo ''
@@ -104,9 +104,9 @@ then
     else
         echo "bechelani's dotfiles were not applied successfully..." >&2
 fi
-else 
+else
 	echo ''
-    echo "You chose not to apply bechelani's dotfiles. You will need to configure your environment manually..."
+  echo "You chose not to apply bechelani's dotfiles. You will need to configure your environment manually..."
 	echo ''
 	echo "Setting defaults for .zshrc and .bashrc..."
 	echo ''
@@ -115,7 +115,7 @@ else
 	echo "source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc && echo "added zsh-autosuggestions to .zshrc..."
 	echo ''
 	echo "source $HOME/.git-completion.bash" >> ${ZDOTDIR:-$HOME}/.bashrc && echo "added git-completion to .bashrc..."
-	
+
 fi
 
 # Setup and configure az cli
@@ -134,7 +134,7 @@ fi
 #     else
 #         echo "Azure CLI not installed successfully." >&2
 # fi
-# else 
+# else
 #     echo "You chose not to install Azure CLI. Exiting now."
 # fi
 
@@ -152,7 +152,7 @@ then
     else
         echo "Default shell not set successfully..." >&2
 fi
-else 
+else
     echo "You chose not to set your default shell to zsh. Exiting now..."
 fi
 echo ''
