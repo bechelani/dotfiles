@@ -97,6 +97,7 @@ then
 	echo ''
 	echo "Checking out WSL branch..." && git checkout wsl
 	echo ''
+	echo "Setting script to exectubale" && chmod +x $HOME/.dotfiles/script/bootstrap
 	echo "Now configuring symlinks..." && $HOME/.dotfiles/script/bootstrap
     if [[ $? -eq 0 ]]
     then
@@ -115,7 +116,6 @@ else
 	echo "source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc && echo "added zsh-autosuggestions to .zshrc..."
 	echo ''
 	echo "source $HOME/.git-completion.bash" >> ${ZDOTDIR:-$HOME}/.bashrc && echo "added git-completion to .bashrc..."
-
 fi
 
 # Setup and configure az cli
