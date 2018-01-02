@@ -504,12 +504,12 @@ function current_pwd {
   echo $(pwd | sed -e "s,^$HOME,~,")
 }
 
-PROMPT='%n@%m %{$fg[yellow]%}%1~%{$reset_color%}$(__posh_git_echo) $ '
+#PROMPT='%n@%m %{$fg[yellow]%}%1~%{$reset_color%}$(__posh_git_echo) $ '
 #PROMPT='%n:%m %~$(__posh_git_echo)> '
 
 #PROMPT='
 #$(current_pwd) $(__posh_git_echo) $ '
 
-export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
+#export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
 
 # RPROMPT='${PR_GREEN}$(virtualenv_info)%{$reset_color%} ${PR_WHITE}$(get_dotnet_version)%{$reset_color%}'

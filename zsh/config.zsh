@@ -1,7 +1,7 @@
 
-fpath=($ZSH/functions $fpath)
+fpath=($HOME/.dotfiles/functions $fpath)
 
-autoload -U $ZSH/functions/*(:t)
+autoload -U $HOME/.dotfiles/functions/*(:t)
 
 # Colours {{{
 #export LSCOLORS=Gxfxcxdxbxegedabagacad
