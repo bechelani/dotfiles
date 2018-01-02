@@ -5,6 +5,6 @@ alias r="source ~/.zshrc"
 # alias tmuxkillall="tmux ls | cut -d : -f 1 | xargs -I {} tmux kill-session -t {}" # tmux kill all sessions
 # alias ct="ctags -R --exclude=.git --exclude=node_modules"
 alias dotfiles="ls -a | grep '^\.' | grep --invert-match '\.DS_Store\|\.$'"
-alias ls="ls -lhA -G"
+# alias ls="ls -lhA -G"
 alias ll="ls -lhA -G"
 # alias git='hub'
