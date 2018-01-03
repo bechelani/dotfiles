@@ -21,25 +21,22 @@ config_files=(~/.dotfiles/**/*.zsh)
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
 do
-  echo "Sourcing $file"
   source $file
 done
 
 # load everything but the path and completion files
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
-  echo "Sourcing $file"
   source $file
 done
 
 # initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
+# autoload -U compinit
+# compinit
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
 do
-  echo "Sourcing $file"
   source $file
 done
 
@@ -91,7 +88,7 @@ DEFAULT_USER="mbechelani"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(zsh-autosuggestions)
-plugins=()
+# plugins=()
 
 # source $ZSH/oh-my-zsh.sh
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -129,7 +126,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 export PATH=$PATH:~/bin
 
-autoload bashcompinit && bashcompinit
+#autoload bashcompinit && bashcompinit
 #source '/Users/jessicadeen/lib/azure-cli/az.completion'
 
 
