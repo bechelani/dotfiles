@@ -93,7 +93,7 @@ DEFAULT_USER="mbechelani"
 # plugins=(zsh-autosuggestions)
 plugins=()
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
