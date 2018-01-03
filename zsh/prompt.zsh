@@ -504,8 +504,10 @@ function current_pwd {
   echo $(pwd | sed -e "s,^$HOME,~,")
 }
 
-PROMPT='%n@%m %{$fg[yellow]%}%1~%{$reset_color%}$(__posh_git_echo) $ '
+#PROMPT='%n@%m %{$fg[yellow]%}%1~%{$reset_color%}$(__posh_git_echo) $ '
 #PROMPT='%n:%m %~$(__posh_git_echo)> '
+
+#PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg_bold[blue]%}%c $(git_prompt_info)% %{$reset_color%}'
 
 #PROMPT='
 #$(current_pwd) $(__posh_git_echo) $ '
