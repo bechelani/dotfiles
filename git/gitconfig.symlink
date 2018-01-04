@@ -32,6 +32,8 @@
 [core]
         excludesfile = ~/.gitignore
         editor = vim
+	autocrlf = true
+	filemode = false
 [apply]
         whitespace = nowarn
 [mergetool]
