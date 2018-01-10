@@ -6,7 +6,7 @@
 ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
-ZSH_THEME="dracula"
+ZSH_THEME="bechelani2"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 DISABLE_AUTO_TITLE="true"
@@ -38,9 +38,9 @@ if [ -e ~/.secrets ]; then
 fi
 
 # Load the FZF completion
-if [ -e ~/.fzf.zsh ]; then
-  source ~/.fzf.zsh
-fi
+#if [ -e ~/.fzf.zsh ]; then
+#  source ~/.fzf.zsh
+#fi
 
 # Load the Variables file
 if [ -e ~/.zsh_files/variables.zsh ]; then
@@ -72,7 +72,7 @@ if [ -e ~/.zsh_files/node.zsh ]; then
 fi
 
 # Python with PyEnv setup
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+#if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # Ruby with RbEnv setup
 #eval "$(rbenv init -)"
