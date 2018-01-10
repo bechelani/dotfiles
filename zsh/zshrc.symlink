@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh configuration.
 ZSH=~/.oh-my-zsh
 
+# Set default user
+DEFAULT_USER="mbechelani"
+
 # Set name of the theme to load.
 ZSH_THEME="dracula"
 
@@ -61,5 +64,7 @@ do
 done
 
 unset config_files
+
+PATH=$(/usr/bin/printenv PATH | /usr/bin/perl -ne 'print join(":", grep { !/\/mnt\/[a-z]/ } split(/:/));')
 
 export PATH=$PATH:~/bin
