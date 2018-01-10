@@ -1,11 +1,12 @@
+#########################################
+# Michel Bechelani's ZSH configuration
+##########################################
+
 # Path to your oh-my-zsh configuration.
 ZSH=~/.oh-my-zsh
 
-# Set default user
-DEFAULT_USER="mbechelani"
-
 # Set name of the theme to load.
-ZSH_THEME="dracula"
+ZSH_THEME="bechelani2"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 DISABLE_AUTO_TITLE="true"
@@ -23,13 +24,13 @@ HIST_STAMPS="mm/dd/yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=()
 
+##########################################
+# Load External configuration files
+##########################################
 # Load oh-my-zsh
 if [ -e $ZSH/oh-my-zsh.sh ]; then
   source $ZSH/oh-my-zsh.sh
 fi
-
-# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Load the secrets file
 if [[ -a ~/.secrets ]]

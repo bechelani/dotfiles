@@ -485,33 +485,3 @@ __posh_git_ps1_upstream_divergence () {
     : ${__POSH_BRANCH_AHEAD_BY:=0}
     : ${__POSH_BRANCH_BEHIND_BY:=0}
 }
-
-function virtualenv_info {
-  [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
-}
-
-function prompt_char {
-  git branch >/dev/null 2>/dev/null && echo '±' && return
-  hg root >/dev/null 2>/dev/null && echo '☿' && return
-  echo '○'
-}
-
-function box_name {
-  [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
-}
-
-function current_pwd {
-  echo $(pwd | sed -e "s,^$HOME,~,")
-}
-
-#PROMPT='%n@%m %{$fg[yellow]%}%1~%{$reset_color%}$(__posh_git_echo) $ '
-#PROMPT='%n:%m %~$(__posh_git_echo)> '
-
-#PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg_bold[blue]%}%c $(git_prompt_info)% %{$reset_color%}'
-
-#PROMPT='
-#$(current_pwd) $(__posh_git_echo) $ '
-
-#export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
-
-# RPROMPT='${PR_GREEN}$(virtualenv_info)%{$reset_color%} ${PR_WHITE}$(get_dotnet_version)%{$reset_color%}'
