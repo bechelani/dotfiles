@@ -4,6 +4,7 @@
 # autoload -U $HOME/.dotfiles/functions/*(:t)
 
 # Colours {{{
+export TERM="screen-256color"
 #export LSCOLORS=Gxfxcxdxbxegedabagacad
 #export LS_COLORS=Gxfxcxdxbxegedabagacad
 export LSCOLORS=dxfxcxdxbxegedabagacad
