@@ -13,21 +13,3 @@ man() {
 		LESS_TERMCAP_us=$'\e[1;32m' \
 			man "$@"
 }
-
-function box_name {
-  [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
-}
-
-function prompt_char {
-  git branch >/dev/null 2>/dev/null && echo '±' && return
-  hg root >/dev/null 2>/dev/null && echo '☿' && return
-  echo '$'
-}
-
-function virtualenv_info {
-  [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
-}
-
-function current_pwd {
-  echo $(pwd | sed -e "s,^$HOME,~,")
-}
