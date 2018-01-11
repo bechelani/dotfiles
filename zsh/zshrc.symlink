@@ -3,10 +3,11 @@
 ##########################################
 
 # Path to your oh-my-zsh configuration.
-ZSH=~/.oh-my-zsh
+#ZSH=~/.oh-my-zsh
+ZSH=~/.dotfiles
 
 # Set name of the theme to load.
-ZSH_THEME="bechelani2"
+#ZSH_THEME="bechelani2"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -22,15 +23,15 @@ ZSH_THEME="bechelani2"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=()
+#plugins=()
 
 ##########################################
 # Load External configuration files
 ##########################################
 # Load oh-my-zsh
-if [ -e $ZSH/oh-my-zsh.sh ]; then
-  source $ZSH/oh-my-zsh.sh
-fi
+#if [ -e $ZSH/oh-my-zsh.sh ]; then
+#  source $ZSH/oh-my-zsh.sh
+#fi
 
 # Load the secrets file
 if [[ -a ~/.secrets ]]
@@ -40,7 +41,7 @@ fi
 
 # all of our zsh files
 typeset -U config_files
-config_files=(~/.dotfiles/**/*.zsh)
+config_files=($ZSH/**/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -65,7 +66,3 @@ do
 done
 
 unset config_files
-
-PATH=$(/usr/bin/printenv PATH | /usr/bin/perl -ne 'print join(":", grep { !/\/mnt\/[a-z]/ } split(/:/));')
-
-export PATH=$PATH:~/bin
