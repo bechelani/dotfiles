@@ -66,5 +66,3 @@ do
 done
 
 unset config_files
-
-export PATH=$PATH:~/bin
