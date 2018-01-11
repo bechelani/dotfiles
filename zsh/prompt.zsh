@@ -530,15 +530,14 @@ battery_status() {
   fi
 }
 
-ret_status() {
-    echo "%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-}
+#ret_status() {
+#    echo "%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+#}
+
 #local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 
-set_prompt() {
-  export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
-}
+#set_prompt() {
+#  export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
+#}
 
-precmd() {
-  __posh_git_ps1 "$(ret_status)%{$reset_color%}%n@$(box_name)%{$fg_bold[green]%}%p %{$fg_bold[blue]%}%c%{$reset_color%}" " %{$reset_color%}$(prompt_char) "
-}
+export PROMPT="%n@$(box_name)%{$fg_bold[blue]%}%c%{$reset_color%}$(__posh_git_echo) %{$reset_color%}$(prompt_char) "
