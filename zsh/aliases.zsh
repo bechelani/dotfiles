@@ -34,21 +34,13 @@ alias svim="sudo vim"
 alias vi="vim"
 alias c='pygmentize -O style=monokai -f console256 -g'
 alias history-stat="history | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
-#alias go_write="cd ~/Projects/Writing"
-
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-  colorflag="--color"
-else # OS X `ls`
-  colorflag="-G"
-fi
 
 # List all files colorized in long format
-alias ls="ls -lhA ${colorflag}"
-alias ll="ls -lF ${colorflag}"
+alias ls="ls -lhA --color"
+alias ll="ls -lF --color"
 
 # List all files colorized in long format, including dot files
-alias la="ls -laF ${colorflag}"
+alias la="ls -laF --color"
 
 # List only directories
-alias lsd='ls -lF ${colorflag} | grep "^d"'
+alias lsd='ls -lF --color | grep "^d"'
