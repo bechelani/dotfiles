@@ -1,14 +1,4 @@
-# Makes creating a new tmux session (with a specific name) easier
-function tmuxopen() {
-  tmux attach -t $1
-}
+syntax on
 
-# Makes creating a new tmux session (with a specific name) easier
-function tmuxnew() {
-  tmux new -s $1
-}
-
-# Makes deleting a tmux session easier
-function tmuxkill() {
-  tmux kill-session -t $1
-}
+" Wrap gitcommit file types at the appropriate length
+filetype indent plugin on
