@@ -17,7 +17,6 @@ alias reload!="source ~/.zshrc"
 alias dotfiles="ls -a | grep '^\.' | grep --invert-match '\.DS_Store\|\.$'"
 alias dotconfig="cd ~/.dotfiles && vim"
 
-
 ##########################################
 # Easier Navigation aliases
 ##########################################
@@ -50,11 +49,6 @@ alias ll="ls -lF ${colorflag}"
 
 # List all files colorized in long format, including dot files
 alias la="ls -laF ${colorflag}"
+
 # List only directories
 alias lsd='ls -lF ${colorflag} | grep "^d"'
-
-##########################################
-# Git
-##########################################
-#alias git='hub'
-alias gpristine='git reset --hard && git clean -dfx'

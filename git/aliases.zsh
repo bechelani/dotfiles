@@ -1,3 +1,7 @@
+##########################################
+# Git
+##########################################
+
 # Use `hub` as our git wrapper:
 #   http://defunkt.github.com/hub/
 hub_path=$(which hub)
@@ -22,3 +26,4 @@ alias gb='git branch'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
+alias gpristine='git reset --hard && git clean -dfx'
