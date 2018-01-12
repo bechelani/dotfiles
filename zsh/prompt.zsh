@@ -126,7 +126,7 @@ __posh_git_ps1() {
 
 __posh_color() {
     if [ -n "$ZSH_VERSION" ]; then
-        echo %{$1%}
+        echo $1
     elif [ -n "$BASH_VERSION" ]; then
         echo \\[$1\\]
     else
@@ -138,7 +138,8 @@ __posh_color() {
 # Echoes the git status string.
 __posh_git_echo() {
     if [ "$(git config --bool bash.enableGitStatus)" = 'false' ]; then
-        return;
+	echo "bash.enableGitStatus is false"
+    	return;
     fi
 
     local DefaultForegroundColor=$(__posh_color '\e[m') # Default no color
@@ -530,14 +531,24 @@ battery_status() {
   fi
 }
 
-#ret_status() {
-#    echo "%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-#}
+ret_status() {
+  echo "%(?:$fg_bold[green]➜$reset_color :$fg_bold[red]➜$reset_color )"
+}
 
-#local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+location() {
+  echo "%n@%m "
+}
 
-#set_prompt() {
-#  export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
-#}
+short_pwd() {
+  echo "$fg_bold[blue]%c$reset_color"
+}
 
-export PROMPT="%n@$(box_name)%{$fg_bold[blue]%}%c%{$reset_color%}$(__posh_git_echo) %{$reset_color%}$(prompt_char) "
+# local ret_status="%(?:$fg_bold[green]➜$reset_color :$fg_bold[red]➜$reset_color )"
+
+# export PROMPT="%n@$(box_name)%{$fg_bold[blue]%}%c%{$reset_color%}$(__posh_git_echo) %{$reset_color%}$(prompt_char) "
+# export PROMPT="$(ret_status)$(location)$(short_pwd)$(__posh_git_echo) $reset_color$(prompt_char) "
+
+precmd() {
+  __posh_git_ps1 "$(ret_status)$(location)$(short_pwd)" "$reset_color $(prompt_char) "
+}
+
