@@ -145,7 +145,7 @@ __posh_git_echo() {
     local DefaultForegroundColor=$(__posh_color '\e[m') # Default no color
     local DefaultBackgroundColor=
 
-    local BeforeText='['
+    local BeforeText=' ['
     local BeforeForegroundColor=$(__posh_color '\e[1;33m') # Yellow
     local BeforeBackgroundColor=
     local DelimText=' |'
@@ -515,9 +515,10 @@ box_name() {
 }
 
 prompt_char() {
-  git branch >/dev/null 2>/dev/null && echo '±' && return
-  hg root >/dev/null 2>/dev/null && echo '☿' && return
-  echo '$'
+  #git branch >/dev/null 2>/dev/null && echo '±' && return
+  #hg root >/dev/null 2>/dev/null && echo '☿' && return
+  #echo '$'
+  echo "$reset_color>"
 }
 
 current_pwd() {
@@ -548,7 +549,10 @@ short_pwd() {
 # export PROMPT="%n@$(box_name)%{$fg_bold[blue]%}%c%{$reset_color%}$(__posh_git_echo) %{$reset_color%}$(prompt_char) "
 # export PROMPT="$(ret_status)$(location)$(short_pwd)$(__posh_git_echo) $reset_color$(prompt_char) "
 
-precmd() {
-  __posh_git_ps1 "$(ret_status)$(location)$(short_pwd)" "$reset_color $(prompt_char) "
-}
+#precmd() {
+#  __posh_git_ps1 "$(ret_status)$(location)$(short_pwd)" "$reset_color $(prompt_char) "
+#}
 
+precmd() {
+	__posh_git_ps1 "$(current_pwd)" "$(prompt_char)"
+}
