@@ -29,7 +29,7 @@ ZSH=~/.dotfiles
 # Load External configuration files
 ##########################################
 # Load oh-my-zsh
-# if [ -e $ZSH/oh-my-zsh.sh ]; then
+#if [ -e $ZSH/oh-my-zsh.sh ]; then
 #  source $ZSH/oh-my-zsh.sh
 #fi
 

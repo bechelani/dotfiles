@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+=======
 # List all files colorized in long format
 alias ls="ls -lhA -G"
 alias ll="ls -lF -G"
@@ -7,6 +11,7 @@ alias la="ls -laF -G"
 
 # List only directories
 alias lsd='ls -lF -G | grep "^d"'
+>>>>>>> compare to wsl
 
 # Gzip-enabled `curl`
 alias gurl='curl --compressed'
