@@ -28,12 +28,6 @@ alias vi="vim"
 alias c='pygmentize -O style=monokai -f console256 -g'
 alias history-stat="history | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
 
-# List all files colorized in long format
-alias ls="ls -lhA --color"
-alias ll="ls -lF --color"
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
 
-# List all files colorized in long format, including dot files
-alias la="ls -laF --color"
-
-# List only directories
-alias lsd='ls -lF --color | grep "^d"'

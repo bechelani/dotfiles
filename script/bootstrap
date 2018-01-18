@@ -151,7 +151,6 @@ then
     fail "error installing dependencies"
   fi
 fi
-## JD edit
 
 #backup old bin, if exists
 if [ -e $HOME/bin ]

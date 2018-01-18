@@ -138,14 +138,13 @@ __posh_color() {
 # Echoes the git status string.
 __posh_git_echo() {
     if [ "$(git config --bool bash.enableGitStatus)" = 'false' ]; then
-	echo "bash.enableGitStatus is false"
-    	return;
+        return;
     fi
 
     local DefaultForegroundColor=$(__posh_color '\e[m') # Default no color
     local DefaultBackgroundColor=
 
-    local BeforeText=' ['
+    local BeforeText='['
     local BeforeForegroundColor=$(__posh_color '\e[1;33m') # Yellow
     local BeforeBackgroundColor=
     local DelimText=' |'
@@ -537,22 +536,13 @@ ret_status() {
 }
 
 location() {
-  echo "%n@%m "
+  echo "%n@$(box_name) "
 }
 
 short_pwd() {
   echo "$fg_bold[blue]%c$reset_color"
 }
 
-# local ret_status="%(?:$fg_bold[green]➜$reset_color :$fg_bold[red]➜$reset_color )"
-
-# export PROMPT="%n@$(box_name)%{$fg_bold[blue]%}%c%{$reset_color%}$(__posh_git_echo) %{$reset_color%}$(prompt_char) "
-# export PROMPT="$(ret_status)$(location)$(short_pwd)$(__posh_git_echo) $reset_color$(prompt_char) "
-
-#precmd() {
-#  __posh_git_ps1 "$(ret_status)$(location)$(short_pwd)" "$reset_color $(prompt_char) "
-#}
-
 precmd() {
-	__posh_git_ps1 "$(current_pwd)" "$(prompt_char)"
+  __posh_git_ps1 "$(ret_status)$(short_pwd)" " $(prompt_char)"
 }
