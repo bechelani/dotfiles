@@ -517,7 +517,7 @@ prompt_char() {
   #git branch >/dev/null 2>/dev/null && echo '±' && return
   #hg root >/dev/null 2>/dev/null && echo '☿' && return
   #echo '$'
-  echo "$reset_color>"
+  echo "$reset_color$ "
 }
 
 current_pwd() {
