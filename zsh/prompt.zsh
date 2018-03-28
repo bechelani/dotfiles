@@ -517,7 +517,7 @@ prompt_char() {
   #git branch >/dev/null 2>/dev/null && echo '±' && return
   #hg root >/dev/null 2>/dev/null && echo '☿' && return
   #echo '$'
-  echo "$reset_color$ "
+  echo "$%{$reset_color%} "
 }
 
 current_pwd() {
@@ -532,7 +532,7 @@ battery_status() {
 }
 
 ret_status() {
-  echo "%(?:$fg_bold[green]➜$reset_color :$fg_bold[red]➜$reset_color )"
+  echo "%(?:%{$fg_bold[green]%}➜:%{$fg_bold[red]%}➜)%{$reset_color%} "
 }
 
 location() {
@@ -540,9 +540,9 @@ location() {
 }
 
 short_pwd() {
-  echo "$fg_bold[blue]%c$reset_color"
+  echo "%{$fg_bold[blue]%}%c%{$reset_color%} "
 }
 
 precmd() {
-  __posh_git_ps1 "$(ret_status)$(short_pwd)" " $(prompt_char)"
+  __posh_git_ps1 "$(ret_status) $(short_pwd)" "$(prompt_char)"
 }
