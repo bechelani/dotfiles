@@ -126,7 +126,7 @@ __posh_git_ps1() {
 
 __posh_color() {
     if [ -n "$ZSH_VERSION" ]; then
-        echo $1
+        echo %{$1%}
     elif [ -n "$BASH_VERSION" ]; then
         echo \\[$1\\]
     else
@@ -397,7 +397,7 @@ __posh_git_echo() {
     gitstring+="${rebase:+$RebaseForegroundColor$RebaseBackgroundColor$rebase}"
 
     # after-branch text
-    gitstring+="$AfterBackgroundColor$AfterForegroundColor$AfterText"
+    gitstring+="$AfterBackgroundColor$AfterForegroundColor$AfterText "
 
     if $ShowStashState && $hasStash; then
         gitstring+="$StashBackgroundColor$StashForegroundColor"$StashText

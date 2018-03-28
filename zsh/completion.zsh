@@ -1,7 +1,3 @@
-# Use modern completion system
-autoload -Uz compinit
-compinit
-
 # zstyle ':completion:*' auto-description 'specify: %d'
 # zstyle ':completion:*' completer _expand _complete _correct _approximate
 # zstyle ':completion:*' format 'Completing %d'
@@ -22,7 +18,7 @@ compinit
 # zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Do menu-driven completion.
-# zstyle ':completion:*' menu select
+zstyle ':completion:*' menu select
 
 # zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' special-dirs true
