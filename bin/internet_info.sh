@@ -1,12 +1,12 @@
 #!/bin/bash
 
-#IP=$(ipconfig getifaddr wifi0)
-IP=$(hostname -I | awk {'print $1}')
+IP=$(ipconfig getifaddr wifi0)
+#IP=$(hostname -s | awk {'print $1}')
 PUB_IP=$(dig +short myip.opendns.com @resolver1.opendns.com)
 
 INTERNET=''
 
-#internet_info=`airport -I | grep agrCtlRSSI | awk '{print $2}' | sed 's/-//g'`
+internet_info=`airport -I | grep agrCtlRSSI | awk '{print $2}' | sed 's/-//g'`
 
 if [[ $internet_info -lt 20 ]]; then
     echo -n '#[fg=colour150]'
@@ -21,5 +21,3 @@ else
 fi
 
 echo -n "#[fg=colour60]$INTERNET  -[$internet_info]db #[fg=colour60]$IP | $PUB_IP"
-
-

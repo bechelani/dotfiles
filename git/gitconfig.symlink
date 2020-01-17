@@ -14,8 +14,8 @@
   lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
   lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
   lg = !"git lg1"
-  promote = !$ZSH/bin/git-promote
-  rank-contributors = !$ZSH/bin/git-rank-contributors
+  promote = !$DOTFILES/bin/git-promote
+  rank-contributors = !$DOTFILES/bin/git-rank-contributors
   s = status -s
   save = !git add -A && git commit -m 'SAVEPOINT'
   st = status
@@ -23,7 +23,7 @@
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
   wip = commit -am "WIP"
   wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-  wtf = !$ZSH/bin/git-wtf
+  wtf = !$DOTFILES/bin/git-wtf
 [color]
   diff = auto
   status = auto
@@ -32,7 +32,7 @@
 [core]
   excludesfile = ~/.gitignore
   editor = atom --wait
-  autocrlf = true
+	autocrlf = input
   filemode = false
 [apply]
   whitespace = nowarn
@@ -60,3 +60,14 @@
   enabled = true
 [help]
   autocorrect = 1
+[user]
+	name = Michel Bechelani
+	email = michel@bechelani.com
+[diff]
+	tool = bc3
+[merge]
+	tool = bc3
+[mergetool "bc3"]
+	trustExitCode = true
+[gpg]
+	program = /usr/local/bin/gpg

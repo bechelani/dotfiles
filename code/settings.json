@@ -1,0 +1,40 @@
+{
+    "editor.fontSize": 14,
+    "editor.fontFamily": "'Fira Code'",
+    "editor.rulers": [
+        120
+    ],
+    "editor.tabSize": 4,
+    "terminal.integrated.fontFamily": "'CascadiaCode Nerd Font'",
+    "terminal.integrated.fontSize": 14,
+    "files.exclude": {
+     //   "**/bin": true,
+     //   "**/obj": true
+    },
+    "explorer.confirmDelete": false,
+    "git.confirmSync": false,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "team.showWelcomeMessage": false,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "git.enableSmartCommit": true,
+    "breadcrumbs.enabled": true,
+    "workbench.sideBar.location": "left",
+    "files.associations": {
+        "*.yml": "yaml"
+    },
+    "git.autofetch": true,
+    "editor.renderWhitespace": "all",
+    "editor.minimap.enabled": true,
+    "editor.renderControlCharacters": false,
+    "terraform.indexing": {
+        "enabled": false,
+        "liveIndexing": false,
+        "exclude": ["**/*"]
+    },
+    "terminal.integrated.rendererType": "dom",
+    "editor.fontLigatures": true,
+    "debug.console.fontSize": 14
+}

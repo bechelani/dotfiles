@@ -1,8 +1,8 @@
 ##########################################
 # zsh/oh-my-zsh aliasies
 ##########################################
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias zshconfig="atom ~/.zshrc"
+alias ohmyzsh="atom ~/.oh-my-zsh"
 alias reload!="source ~/.zshrc"
 
 ##########################################
@@ -27,8 +27,7 @@ alias svim="sudo vim"
 alias vi="vim"
 alias c='pygmentize -O style=monokai -f console256 -g'
 alias history-stat="history | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
-
+alias path='echo $PATH | tr \: \\n'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
-

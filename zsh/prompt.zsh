@@ -509,9 +509,9 @@ __posh_git_ps1_upstream_divergence() {
     : ${__POSH_BRANCH_BEHIND_BY:=0}
 }
 
-box_name() {
-  [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
-}
+#box_name() {
+#  [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
+#}
 
 prompt_char() {
   #git branch >/dev/null 2>/dev/null && echo '±' && return
