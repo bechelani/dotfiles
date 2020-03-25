@@ -1,0 +1,3 @@
+echo 'Loading custom ZSH badass environment...'
+gem install colorls -v 1.2.0 > /dev/null && bash -c zsh
+echo ''

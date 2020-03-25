@@ -2,12 +2,13 @@
 # Michel Bechelani's ZSH configuration
 ##########################################
 
-# Path to your oh-my-zsh configuration.
-#ZSH=~/.oh-my-zsh
-ZSH=~/.dotfiles
+# Path to your oh-my-zsh installation oh-my-zsh specific settings
+export ZSH=~/.oh-my-zsh
+export TERM=xterm-256color
+source $ZSH/oh-my-zsh.sh
 
-# Set name of the theme to load.
-#ZSH_THEME="bechelani2"
+# ZSH Customization Settings
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -23,46 +24,71 @@ ZSH=~/.dotfiles
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-#plugins=()
+# Add wisely, as too many plugins slow down shell startup.
 
-##########################################
-# Load External configuration files
-##########################################
-# Load oh-my-zsh
-#if [ -e $ZSH/oh-my-zsh.sh ]; then
-#  source $ZSH/oh-my-zsh.sh
-#fi
+plugins=(sudo git history tmux tmuxinator zsh-autosuggestions zsh-completions zsh-z)
 
-# Load the secrets file
-if [[ -a ~/.secrets ]]
-then
-  source ~/.secrets
-fi
+# User configuration
 
-# all of our zsh files
-typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+# export MANPATH="/usr/local/man:$MANPATH"
 
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}
-do
-  source $file
-done
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
-do
-  source $file
-done
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-# initialize autocomplete here, otherwise functions won't be loaded
-# autoload -U compinit
-# compinit
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-# load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
-do
-  source $file
-done
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-unset config_files
+#---- CUSTOM ----
+#Powerlevel9k/Powerlevel10k settings
+# https://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config#p9kgt
+source $ZSH/oh-my-zsh.sh
+source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.p9kgt
+source $HOME/.functions
+source $HOME/.aliases
+
+# autoload ----------------------------------------------------------------------
+autoload -Uz vcs_info 
+autoload -Uz colors && colors
+autoload -U compinit && compinit
+
+# syntax highlighting
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
+#styles
+ZSH_HIGHLIGHT_STYLES[default]=none
+# ZSH_HIGHLIGHT_STYLES[function]=fg=magenta,bold
+ZSH_HIGHLIGHT_STYLES[command]=fg=green
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=green
+ZSH_HIGHLIGHT_STYLES[alias]=fg=green
+ZSH_HIGHLIGHT_STYLES[builtin]=fg=green
+#path
+ZSH_HIGHLIGHT_STYLES[path]=fg=cyan,underline
+ZSH_HIGHLIGHT_STYLES[path_prefix]=fg=cyan
+ZSH_HIGHLIGHT_STYLES[path_approx]=fg=cyan
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=240
+
+# patterns
+ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red') # To have commands starting with `rm -rf` in red:
+
+#---- Export ----
+export PATH=$PATH:~/bin
+#---- End Export ----
+
+#---- Source ----
+[ -f ~/bin/fubectl.source ] && source ~/bin/fubectl.source
+source <(kubectl completion zsh)
+source $(dirname $(gem which colorls))/tab_complete.sh
+#---- End Source ----
+#---- END CUSTOM ----
