@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #
 # bootstrap installs things.
 
@@ -152,7 +152,7 @@ then
   fi
 fi
 
-#backup old bin, if exists
+# backup old bin, if exists
 if [ -e $HOME/bin ]
 then
     echo ''
@@ -166,8 +166,8 @@ fi
 # symlink .dotfiles bin to ~
 ln -s $HOME/.dotfiles/bin $HOME/bin
 
-# symlink .dotfiles tmux to ~
-ln -s $HOME/.dotfiles/tmux $HOME/.tmux
+# # symlink .dotfiles tmux to ~
+# ln -s $HOME/.dotfiles/tmux $HOME/.tmux
 
 echo ''
 echo '  All installed!'
