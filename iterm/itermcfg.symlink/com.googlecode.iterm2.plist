@@ -8,6 +8,8 @@
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -36121,7 +36123,11 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>281 363 796 486 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 62 1434 815 0 0 1440 900 </string>
+	<string>0 57 1440 820 0 0 1440 877 </string>
+	<key>NeverWarnAboutShortLivedSessions_5DBEA47B-F547-466A-93F8-F211C1543CD6</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_5DBEA47B-F547-466A-93F8-F211C1543CD6_selection</key>
+	<integer>0</integer>
 	<key>NeverWarnAboutShortLivedSessions_83F1CF4E-EB00-48E4-A435-541089C6392C</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_83F1CF4E-EB00-48E4-A435-541089C6392C_selection</key>
@@ -37088,13 +37094,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.546234130859375</real>
+				<real>0.18431372549019609</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.28062914162234748</real>
+				<real>0.1803921568627451</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.17647058823529413</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -37638,13 +37644,13 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>Powershell Core</string>
+			<string>Powershell</string>
 			<key>Non Ascii Font</key>
 			<string>Menlo-Regular 11</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>CascadiaCodePL-Regular 14</string>
+			<string>CascadiaCodeNerdFontComplete- 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -37941,7 +37947,7 @@
 			<key>Columns</key>
 			<integer>181</integer>
 			<key>Command</key>
-			<string>~/Dev/azshell -shell bash</string>
+			<string>~/Dev/utils/azshell/azshell -shell bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -38444,7 +38450,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>CascadiaCodePL-Regular 14</string>
+			<string>CascadiaCodeNerdFontComplete- 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -38741,7 +38747,7 @@
 			<key>Columns</key>
 			<integer>181</integer>
 			<key>Command</key>
-			<string>~/Dev/azshell -shell pwsh</string>
+			<string>~/Dev/utils/azshell/azshell -shell pwsh</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -39246,7 +39252,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>CascadiaCodePL-Regular 14</string>
+			<string>CascadiaCodeNerdFontComplete- 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -39340,10 +39346,12 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.6</string>
+		<string>3.3.8</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
 		<string>3.3.5</string>
 		<string>3.3.7</string>
+		<string>3.3.9</string>
 		<string>3.2.9</string>
 		<string>3.3.2</string>
 		<string>3.3.4</string>
@@ -39374,9 +39382,9 @@
 	<key>NoSyncInstallationId</key>
 	<string>2DD8F336-406F-4D14-937D-D1FEA277B174</string>
 	<key>NoSyncLastTipTime</key>
-	<real>597531197.005</real>
+	<real>606187912.23239899</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>45</integer>
+	<integer>66</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -40141,6 +40149,9 @@
 		<string>0023</string>
 		<string>0016</string>
 		<string>0009</string>
+		<string>0059</string>
+		<string>0066</string>
+		<string>0073</string>
 		<string>0002</string>
 		<string>0045</string>
 		<string>0038</string>
@@ -40148,40 +40159,54 @@
 		<string>0017</string>
 		<string>0031</string>
 		<string>0024</string>
+		<string>0067</string>
+		<string>0074</string>
 		<string>0010</string>
 		<string>0046</string>
 		<string>0003</string>
 		<string>0039</string>
 		<string>0053</string>
+		<string>0060</string>
 		<string>0025</string>
 		<string>0018</string>
 		<string>0032</string>
+		<string>0068</string>
 		<string>0011</string>
 		<string>0047</string>
 		<string>0004</string>
 		<string>0054</string>
+		<string>0061</string>
 		<string>0033</string>
 		<string>0026</string>
 		<string>0019</string>
 		<string>0040</string>
+		<string>0069</string>
+		<string>0076</string>
 		<string>0012</string>
 		<string>0048</string>
 		<string>0005</string>
 		<string>0055</string>
+		<string>0062</string>
 		<string>0041</string>
 		<string>0034</string>
 		<string>0027</string>
+		<string>0077</string>
 		<string>0013</string>
 		<string>0049</string>
 		<string>0006</string>
 		<string>0020</string>
 		<string>0056</string>
+		<string>0063</string>
+		<string>0070</string>
 		<string>0042</string>
 		<string>0035</string>
 		<string>0028</string>
 		<string>0021</string>
 		<string>0014</string>
 		<string>0007</string>
+		<string>0057</string>
+		<string>0064</string>
+		<string>0071</string>
 		<string>0000</string>
 		<string>0029</string>
 		<string>0050</string>
@@ -40190,12 +40215,15 @@
 		<string>0022</string>
 		<string>0015</string>
 		<string>0008</string>
+		<string>0058</string>
+		<string>0065</string>
+		<string>0072</string>
 		<string>0001</string>
 		<string>0037</string>
 		<string>000</string>
 		<string>0044</string>
 		<string>0051</string>
-		<string>0057</string>
+		<string>0078</string>
 	</array>
 	<key>OpenBookmark</key>
 	<false/>
@@ -40245,7 +40273,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-12-08T20:53:16Z</date>
+	<date>2020-03-25T03:54:23Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -40283,7 +40311,7 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.3.7</string>
+	<string>3.3.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
