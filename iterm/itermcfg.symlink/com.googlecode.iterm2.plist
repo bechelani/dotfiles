@@ -36123,7 +36123,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>281 363 796 486 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 57 1440 820 0 0 1440 877 </string>
+	<string>0 57 1440 820 0 0 1440 900 </string>
 	<key>NeverWarnAboutShortLivedSessions_5DBEA47B-F547-466A-93F8-F211C1543CD6</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_5DBEA47B-F547-466A-93F8-F211C1543CD6_selection</key>
@@ -36844,7 +36844,7 @@
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -39384,7 +39384,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>606187912.23239899</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>66</integer>
+	<integer>71</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -40273,7 +40273,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-25T03:54:23Z</date>
+	<date>2020-03-28T17:23:09Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
