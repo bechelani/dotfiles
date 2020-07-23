@@ -32,14 +32,20 @@
 [core]
   excludesfile = ~/.gitignore
   editor = atom --wait
-	autocrlf = input
+  autocrlf = input
   filemode = false
 [apply]
   whitespace = nowarn
-[mergetool]
-  keepBackup = false
+[diff]
+  tool = bc3
 [difftool]
   prompt = false
+[merge]
+  tool = bc3
+[mergetool]
+  keepBackup = false
+[mergetool "bc3"]
+  trustExitCode = true
 [filter "lfs"]
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
@@ -60,14 +66,3 @@
   enabled = true
 [help]
   autocorrect = 1
-[user]
-	name = Michel Bechelani
-	email = michel@bechelani.com
-[diff]
-	tool = bc3
-[merge]
-	tool = bc3
-[mergetool "bc3"]
-	trustExitCode = true
-[gpg]
-	program = /usr/local/bin/gpg
