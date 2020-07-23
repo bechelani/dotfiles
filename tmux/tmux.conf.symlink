@@ -3,17 +3,20 @@ set -g prefix C-a
 unbind C-b
 bind C-a send-prefix
 
+# 0 is too far from ` ;)
+set -g base-index 1
 
-# force a reload of the config file
-bind-key R source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
+# Automatically set window title
+set-window-option -g automatic-rename on
+set-option -g set-titles on
 
-# TODO: This shadows the default paste-buffer binding; should fix that.
-bind-key ] send-prefix
-bind-key C-] last-window
+# don't rename windows automatically
+set-option -g allow-rename off
 
+#set -g default-terminal screen-256color
 set -g default-terminal "xterm-256color"
-
-set-option -g history-limit 20000
+set -g status-keys vi
+set -g history-limit 10000
 
 # use vi style keybindings
 setw -g mode-keys vi
@@ -21,22 +24,64 @@ setw -g mode-keys vi
 # xterm-style function key sequences
 setw -g xterm-keys on
 
-# Mouse support ----------------------------------------------------------
-set -g mouse on
+setw -g mode-mouse on
+setw -g monitor-activity on
+
+# split panes using \ and -
+bind \\ split-window -h -c '#{pane_current_path}' # vertical pane
+bind - split-window -v -c '#{pane_current_path}' # horizontal pane
+unbind '"'
+unbind %
+
+bind-key J resize-pane -D 5
+bind-key K resize-pane -U 5
+bind-key H resize-pane -L 5
+bind-key L resize-pane -R 5
+
+bind-key M-j resize-pane -D
+bind-key M-k resize-pane -U
+bind-key M-h resize-pane -L
+bind-key M-l resize-pane -R
+
+# Vim style pane selection
+bind h select-pane -L
+bind j select-pane -D 
+bind k select-pane -U
+bind l select-pane -R
+
+# Use Alt-vim keys without prefix key to switch panes
+bind -n M-h select-pane -L
+bind -n M-j select-pane -D 
+bind -n M-k select-pane -U
+bind -n M-l select-pane -R
+
+# Use Alt-arrow keys without prefix key to switch panes
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# Shift arrow to switch windows
+bind -n S-Left  previous-window
+bind -n S-Right next-window
+
+# No delay for escape key press
+set -sg escape-time 0
+
+# Reload tmux config
+bind r source-file ~/.tmux.conf
+
+# TODO: This shadows the default paste-buffer binding; should fix that.
+bind-key ] send-prefix
+bind-key C-] last-window
 
 bind-key -T copy-mode-vi WheelUpPane send -X scroll-up
 bind-key -T copy-mode-vi WheelDownPane send -X scroll-down
 
 # # Vi copypaste
-setw -g mode-keys vi
+
 bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy" \; display-message "highlighted selection copied to system clipboard"
-
-# Easy-to-remember split pane commands
-bind \ split-window -h -c '#{pane_current_path}' # vertical pane
-bind - split-window -v -c '#{pane_current_path}' # horizontal pane
-unbind '"'
-unbind %
 
 # Easy-to-remember window commands
 bind k confirm kill-window
@@ -79,7 +124,7 @@ setw -g window-status-current-format ' #I#[fg=colour250]:#[fg=colour255]#W#[fg=c
 
 # Plugins
 # List of plugins
- set -g @tpm_plugins '          \
+set -g @tpm_plugins '          \
    tmux-plugins/tpm             \
    chriszarate/tmux-tasks       \
    soyuka/tmux-current-pane-hostname     \
