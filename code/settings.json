@@ -36,5 +36,7 @@
     },
     "terminal.integrated.rendererType": "dom",
     "editor.fontLigatures": true,
-    "debug.console.fontSize": 14
+    "debug.console.fontSize": 14,
+    "window.zoomLevel": 0,
+    "debug.javascript.usePreview": true
 }
