@@ -126,3 +126,15 @@ GIT_PS1_SHOWUPSTREAM="auto"
 
 # az cli
 autoload bashcompinit && bashcompinit
+
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
+export THIS_IS_BASH="true"
+
+###-tns-completion-start-###
+if [ -f /Users/Michel/.tnsrc ]; then 
+    source /Users/Michel/.tnsrc 
+fi
+###-tns-completion-end-###

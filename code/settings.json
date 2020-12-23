@@ -38,5 +38,7 @@
     "editor.fontLigatures": true,
     "debug.console.fontSize": 14,
     "window.zoomLevel": 0,
-    "debug.javascript.usePreview": true
+    "debug.javascript.usePreview": true,
+    "terminal.integrated.shell.osx": "/usr/local/bin/pwsh",
+    "nativescript.analytics.enabled": false
 }

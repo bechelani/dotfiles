@@ -6,6 +6,9 @@ export ZSH=~/.oh-my-zsh
 export DOTFILES=~/.dotfiles
 export TERM=xterm-256color
 
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -161,10 +164,15 @@ unset config_files
 
 # az cli
 autoload bashcompinit && bashcompinit
+
+gpgconf --launch gpg-agent
+
 #export PATH="/usr/local/sbin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
+###-tns-completion-start-###
+if [ -f /Users/Michel/.tnsrc ]; then 
+    source /Users/Michel/.tnsrc 
+fi
+###-tns-completion-end-###
