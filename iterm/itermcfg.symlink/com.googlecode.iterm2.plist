@@ -36645,7 +36645,7 @@
 				<real>0.0039215686274509803</real>
 			</dict>
 			<key>Background Image Location</key>
-			<string>/Users/Michel/Desktop/powershell_bg.png</string>
+			<string>/Users/Michel/.dotfiles/iterm/images/powershell-bg.png</string>
 			<key>Background Image Mode</key>
 			<integer>3</integer>
 			<key>Badge Color</key>
@@ -37467,7 +37467,7 @@
 				<real>0.13333333333333333</real>
 			</dict>
 			<key>Background Image Location</key>
-			<string>/Users/Michel/Desktop/zsh_bg.png</string>
+			<string>/Users/Michel/.dotfiles/iterm/images/zsh-bg.png</string>
 			<key>Background Image Mode</key>
 			<integer>3</integer>
 			<key>Badge Color</key>
@@ -38333,7 +38333,7 @@
 				<real>0.17766159772872925</real>
 			</dict>
 			<key>Background Image Location</key>
-			<string>/Users/Michel/Desktop/bash_bg.png</string>
+			<string>/Users/Michel/.dotfiles/iterm/images/bash-bg.png</string>
 			<key>Background Image Mode</key>
 			<integer>3</integer>
 			<key>Badge Color</key>
