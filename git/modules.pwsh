@@ -1,1 +1,1 @@
-Import-Module '/Users/Michel/Dev/utils/scripts/modules/GitManagementModule.psm1'
+Import-Module (Join-Path $HOME 'Dev/utils/scripts/modules/GitManagementModule.psm1')
