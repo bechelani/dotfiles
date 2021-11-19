@@ -1,0 +1,2 @@
+export ASPNETCORE_ENVIRONMENT="Development"
+export NUGET_API_KEY="27e73136-28ba-4d11-bf10-7a83b9f649d9"

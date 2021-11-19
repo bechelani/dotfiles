@@ -1,0 +1,2 @@
+$Env:CLICOLOR=1
+$Env:LSCOLORS="dxfxcxdxbxegedabagacad"

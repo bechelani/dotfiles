@@ -1,0 +1,3 @@
+# Set-Alias l Get-ChildItem -option AllScope -Force
+# Set-Alias -Name ls  -Value "Get-ChildItemColor" -option AllScope -Force
+# Set-Alias -Name dir -Value "Get-ChildItemColor" -option AllScope -Force

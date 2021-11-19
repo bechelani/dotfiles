@@ -1,0 +1,1 @@
+$Env:PATH = "/usr/local/MacGPG2/bin:" + $Env:PATH

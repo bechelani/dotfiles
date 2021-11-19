@@ -1,0 +1,74 @@
+# Local/private config goes in the include
+[include]
+  path = ~/.gitconfig.local
+[hub]
+  protocol = https
+[alias]
+  amend = commit -a --amend
+  cm = !git add -A && git commit -m
+  co = checkout
+  cob = checkout -b
+  count   = !git shortlog -sn
+  ec = config --global -e
+  ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+  lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+  lg = !"git lg1"
+  promote = !$DOTFILES/bin/git-promote
+  rank-contributors = !$DOTFILES/bin/git-rank-contributors
+  s = status -s
+  save = !git add -A && git commit -m 'SAVEPOINT'
+  st = status
+  undo = reset HEAD~1 --mixed
+  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  wip = commit -am "WIP"
+  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+  wtf = !$DOTFILES/bin/git-wtf
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
+[core]
+  excludesfile = ~/.gitignore
+  editor = atom --wait
+  autocrlf = input
+  filemode = false
+	ignorecase = true
+[apply]
+  whitespace = nowarn
+[diff]
+  tool = bc3
+[difftool]
+  prompt = false
+[merge]
+  tool = bc3
+[mergetool]
+  keepBackup = false
+[mergetool "bc3"]
+  trustExitCode = true
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+[filter "media"]
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+[filter "hawser"]
+  clean = git hawser clean %f
+  smudge = git hawser smudge %f
+  required = true
+[pull]
+  rebase = false
+[push]
+  default = simple
+[rerere]
+  enabled = true
+[help]
+  autocorrect = 1
+[user]
+	name = Michel Bechelani
+	email = michel@bechelani.com
+[init]
+	defaultBranch = main
