@@ -67,8 +67,5 @@
   enabled = true
 [help]
   autocorrect = 1
-[user]
-	name = Michel Bechelani
-	email = michel@bechelani.com
 [init]
-	defaultBranch = main
+  defaultBranch = main
