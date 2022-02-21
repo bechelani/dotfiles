@@ -1,0 +1,3 @@
+Import-Module nvm
+
+Set-NodeVersion 14

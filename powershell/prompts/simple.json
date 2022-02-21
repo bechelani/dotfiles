@@ -8,26 +8,23 @@
         {
           "background": "#c386f1",
           "foreground": "#ffffff",
-          "leading_diamond": "",
+          "leading_diamond": "\ue0b6",
           "properties": {
-            "template": " {{ if .SSHSession }} {{ end }}{{ .UserName }}@{{ .HostName }} "
+            "template": "  {{ .UserName }}@AzShell "
           },
           "style": "diamond",
-          "trailing_diamond": "",
+          "trailing_diamond": "\ue0b0",
           "type": "session"
         },
         {
-          "type": "path",
-          "style": "diamond",
-          "powerline_symbol": "",
-          "foreground": "#ffffff",
           "background": "#ff479c",
-          "leading_diamond": "",
-          "trailing_diamond": "",
+          "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
           "properties": {
-            "prefix": "  ",
             "style": "folder"
-          }
+          },
+          "style": "powerline",
+          "type": "path"
         },
         {
           "type": "git",
@@ -59,17 +56,6 @@
           }
         },
         {
-          "type": "root",
-          "style": "powerline",
-          "powerline_symbol": "",
-          "invert_powerline": false,
-          "foreground": "#ffffff",
-          "background": "#ffff66",
-          "leading_diamond": "",
-          "trailing_diamond": "",
-          "properties": null
-        },
-        {
           "type": "exit",
           "style": "powerline",
           "powerline_symbol": "",
@@ -83,7 +69,7 @@
             "color_background": true,
             "display_exit_code": false,
             "error_color": "#f1184c",
-            "prefix": " "
+            "prefix": " \uf1d0"
           }
         }
       ]
