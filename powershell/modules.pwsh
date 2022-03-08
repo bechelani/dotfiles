@@ -10,7 +10,7 @@ Write-Host "running modules.pwsh"
 Import-Module -Name Terminal-Icons
 Import-Module oh-my-posh
 
-oh-my-posh --init --shell pwsh --config "$HOME/.dotfiles/powershell/prompts/simple.json" | Invoke-Expression
+oh-my-posh --init --shell pwsh --config "$HOME/.dotfiles/powershell/prompts/azshell.json" | Invoke-Expression
 
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
     param($wordToComplete, $commandAst, $cursorPosition)
