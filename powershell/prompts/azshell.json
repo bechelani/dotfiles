@@ -38,6 +38,14 @@
                     "type": "python"
                 },
                 {
+                    "foreground": "#9e7eff",
+                    "properties": {
+                        "display_version": true
+                    },
+                    "style": "powerline",
+                    "type": "dotnet"
+                },
+                {
                     "foreground": "#56B6C2",
                     "properties": {
                         "branch_icon": "",
@@ -45,17 +53,6 @@
                     },
                     "style": "plain",
                     "type": "git"
-                },
-                {
-                    "foreground": "#FFAB91",
-                    "properties": {
-                        "always_enabled": false,
-                        "style": "austin",
-                        "template": "{{{ .FormattedMs }}}",
-                        "threshold": 100
-                    },
-                    "style": "powerline",
-                    "type": "executiontime"
                 }
             ],
             "type": "prompt"

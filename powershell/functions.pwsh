@@ -1,7 +1,8 @@
 ##########################################
 # common function
 ##########################################
-Function path { Write-Host $Env:PATH.Replace(';', "`n") }
+Function path { Write-Host $Env:PATH.Replace(':', "`n") }
+Function ls { Get-ChildItem -Force }
 
 ##########################################
 # dotfiles aliasies
