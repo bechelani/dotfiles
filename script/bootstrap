@@ -258,8 +258,9 @@ beche_itermConfig () {
 
 beche_fontSetup () {
   # install Source Code Pro nerd font
-  sudo cp $HOME/.dotfiles/Source\ Code\ Pro\ Nerd\ Font\ Complete.ttf /Library/Fonts
-  success "Source Code Pro font copied successfully!"
+  sudo cp $HOME/.dotfiles/fonts/Source\ Code\ Pro\ Nerd\ Font\ Complete.ttf /Library/Fonts
+  sudo cp $HOME/.dotfiles/fonts/Caskaydia\ Cove\ Nerd\ Font\ Complete.ttf /Library/Fonts
+  success "Source Code Pro font and Caskaydia Cove font copied successfully!"
 }
 
 bechce_configFix () {
