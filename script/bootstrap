@@ -133,23 +133,22 @@ add_line () {
   cat <(fgrep -i -v "$command" <(crontab -l)) <(echo "$job") | crontab -
 }
 
-setup_gitconfig
-install_dotfiles
-
-# If we're on a Mac, let's install and setup homebrew.
-if [ "$(uname -s)" == "Darwin" ]
-then
-  info "installing dependencies"
-  if source bin/dot | while read -r data; do info "$data"; done
+install_dependencies () {
+  # If we're on a Mac, let's install and setup homebrew.
+  if [ "$(uname -s)" == "Darwin" ]
   then
-    success "dependencies installed"
-    echo ''
-    echo "Now updating dependencies..."
-    pip3 install --upgrade setuptools
-  else
-    fail "error installing dependencies"
+    info "installing dependencies"
+    if source bin/dot | while read -r data; do info "$data"; done
+    then
+      success "dependencies installed"
+      echo ''
+      echo "Now updating dependencies..."
+      pip3 install --upgrade setuptools
+    else
+      fail "error installing dependencies"
+    fi
   fi
-fi
+}
 
 beche_mods () {
   info "starting your mods"
@@ -263,7 +262,7 @@ beche_fontSetup () {
   success "Source Code Pro font and Caskaydia Cove font copied successfully!"
 }
 
-bechce_configFix () {
+beche_configFix () {
   # .config permissions fix
   if [ ! -d "$HOME/.config" ]; then
     info "$HOME/.config doesn't exist, nothing to fix"
@@ -272,6 +271,10 @@ bechce_configFix () {
     success '.config permissions fixed'
   fi
 }
+
+setup_gitconfig
+install_dotfiles
+install_dependendcies
 
 beche_mods
 beche_symlinks
