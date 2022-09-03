@@ -4,6 +4,7 @@ tap 'homebrew/bundle'
 
 brew 'git'
 brew 'openssl'
+brew 'nvm'
 
 cask '1password'
 cask 'google-chrome'
