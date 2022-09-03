@@ -274,7 +274,7 @@ beche_configFix () {
 
 setup_gitconfig
 install_dotfiles
-install_dependendcies
+install_dependencies
 
 beche_mods
 beche_symlinks
