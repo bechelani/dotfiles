@@ -34,9 +34,12 @@ zshInstall () {
     if test $(which zsh); then
         info "zsh already installed..."
     else
-        brew install zsh zsh-completions
-        success 'zsh and zsh-completions installed'
+        brew install zsh
+        success 'zsh installed'
     fi
+    
+    brew install zsh-completions
+    success 'zsh-completions installed'
 }
 
 zshZInstall () {
@@ -75,6 +78,7 @@ ohmyzshInstall () {
             fi
         fi
     else
+    echo ''
     echo "oh-my-zsh not found, now installing oh-my-zsh..."
     echo ''
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
@@ -185,7 +189,7 @@ zshZInstall
 ohmyzshPluginInstall
 pl9kInstall
 pl10kInstall
-tmuxTpmInstall
+#tmuxTpmInstall
 
 #vim setup
 #vundleInstall
@@ -195,19 +199,19 @@ tmuxTpmInstall
 
 # Pull down personal dotfiles
 echo ''
-read -p "Do you want to use your dotfiles? y/n" -n 1 -r
+read -p "Do you want to use your dotfiles? y/n " -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     echo ''
-	echo "Now pulling down jldeen dotfiles..."
-	git clone https://github.com/bechelani/dotfiles.git ~/.dotfiles
-	echo ''
-	cd $HOME/.dotfiles && echo "switched to .dotfiles dir..."
-	echo ''
-	echo "Checking out macOS branch..." && git checkout mac
-	echo ''
-	echo "Now configuring symlinks..." && $HOME/.dotfiles/script/bootstrap
+    echo "Now pulling down your dotfiles..."
+    git clone https://github.com/bechelani/dotfiles.git ~/.dotfiles
+    echo ''
+    cd $HOME/.dotfiles && echo "switched to .dotfiles dir..."
+    echo ''
+    echo "Checking out macOS branch..." && git checkout mac
+    echo ''
+    echo "Now configuring symlinks..." && $HOME/.dotfiles/script/bootstrap
     echo ''
 
     if [[ $? -eq 0 ]]
@@ -217,13 +221,13 @@ then
         echo "Your macOS dotfiles were not applied successfully..." >&2
 fi
 else 
-	echo ''
+    echo ''
     echo "You chose not to apply your macOS dotfiles. You will need to configure your environment manually..."
-	echo ''
-	echo "Setting defaults for .zshrc and .bashrc..."
-	echo ''
-	echo "source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc && echo "added zsh-syntax-highlighting to .zshrc..."
-	echo ''
-	echo "source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc && echo "added zsh-autosuggestions to .zshrc..."
-	echo ''	
+    echo ''
+    echo "Setting defaults for .zshrc and .bashrc..."
+    echo ''
+    echo "source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc && echo "added zsh-syntax-highlighting to .zshrc..."
+    echo ''
+    echo "source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc && echo "added zsh-autosuggestions to .zshrc..."
+    echo ''	
 fi
