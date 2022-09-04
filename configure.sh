@@ -28,6 +28,30 @@ brewUpdate () {
     success 'brew updated'
 }
 
+ohmyposhInstall () {
+    # oh-my-posh install
+    if test $(which oh-my-posh); then
+      info "oh-my-posh is already installed..."
+      read -p "Would you like to update oh-my-posh now? y/n " -n 1 -r
+      echo ""
+      if [[ $REPLY =~ ^[Yy]$ ]] ; then
+        brew update && brew upgrade oh-my-posh
+        if [[ $? -eq 0 ]]
+        then
+          success "Update complete..."
+        else
+          fail "Update not complete..."
+        fi
+      fi
+    else
+      echo ""
+      echo "oh-my-posh not found, now installing oh-my-posh..."
+      echo ""
+      brew install jandedobbeleer/oh-my-posh/oh-my-posh
+      success "oh-my-posh installed"
+    fi
+}
+
 zshInstall () {
     # zsh install
     # todo add in check for macOS 10.15 since zsh is default
@@ -37,7 +61,7 @@ zshInstall () {
         brew install zsh
         success 'zsh installed'
     fi
-    
+
     brew install zsh-completions
     success 'zsh-completions installed'
 }
@@ -135,6 +159,45 @@ tmuxTpmInstall () {
     fi
 }
 
+dotfilesInstall () {
+  # dotfiles install
+
+  # Pull down personal dotfiles
+  echo ""
+  read -p "Do you want to use your dotfiles? y/n " -n 1 -r
+  echo    # (optional) move to a new line
+  if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+      echo ""
+      echo "Now pulling down your dotfiles..."
+      git clone https://github.com/bechelani/dotfiles.git ~/.dotfiles
+      echo ""
+      cd $HOME/.dotfiles && echo "switched to .dotfiles dir..."
+      echo ""
+      echo "Checking out macOS branch..." && git checkout mac
+      echo ""
+      echo "Now configuring symlinks..." && $HOME/.dotfiles/script/bootstrap
+      echo ""
+
+      if [[ $? -eq 0 ]]
+      then
+          echo "Successfully configured your environment with your macOS dotfiles..."
+      else
+          echo "Your macOS dotfiles were not applied successfully..." >&2
+  fi
+  else
+      echo ""
+      echo "You chose not to apply your macOS dotfiles. You will need to configure your environment manually..."
+      echo ""
+      #echo "Setting defaults for .zshrc and .bashrc..."
+      #echo ""
+      #echo "source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc && echo "added zsh-syntax-highlighting to .zshrc..."
+      #echo ""
+      #echo "source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc && echo "added zsh-autosuggestions to .zshrc..."
+      #echo ""
+  fi
+}
+
 vundleInstall () {
     if [ -d "$HOME/.vim/bundle/Vundle.vim" ]; then
         info 'vundle already exists'
@@ -169,7 +232,7 @@ wombatColorSchemeInstall () {
         info "wombat color scheme already installed"
     else
         # Vim color scheme install
-        git clone https://github.com/sheerun/vim-wombat-scheme.git ~/.vim/colors/wombat 
+        git clone https://github.com/sheerun/vim-wombat-scheme.git ~/.vim/colors/wombat
         mv ~/.vim/colors/wombat/colors/* ~/.vim/colors/
         success 'vim wombat color scheme installed'
     fi
@@ -183,12 +246,15 @@ brewUpdate
 zshInstall
 configureGitCompletion
 
+# oh my posh setup
+ohmyposhInstall
+
 # oh my zsh setup
-ohmyzshInstall
-zshZInstall
-ohmyzshPluginInstall
-pl9kInstall
-pl10kInstall
+#ohmyzshInstall
+#zshZInstall
+#ohmyzshPluginInstall
+#pl9kInstall
+#pl10kInstall
 #tmuxTpmInstall
 
 #vim setup
@@ -197,37 +263,5 @@ pl10kInstall
 #nerdtreeInstall
 #wombatColorSchemeInstall
 
-# Pull down personal dotfiles
-echo ''
-read -p "Do you want to use your dotfiles? y/n " -n 1 -r
-echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    echo ''
-    echo "Now pulling down your dotfiles..."
-    git clone https://github.com/bechelani/dotfiles.git ~/.dotfiles
-    echo ''
-    cd $HOME/.dotfiles && echo "switched to .dotfiles dir..."
-    echo ''
-    echo "Checking out macOS branch..." && git checkout mac
-    echo ''
-    echo "Now configuring symlinks..." && $HOME/.dotfiles/script/bootstrap
-    echo ''
-
-    if [[ $? -eq 0 ]]
-    then
-        echo "Successfully configured your environment with your macOS dotfiles..."
-    else
-        echo "Your macOS dotfiles were not applied successfully..." >&2
-fi
-else 
-    echo ''
-    echo "You chose not to apply your macOS dotfiles. You will need to configure your environment manually..."
-    echo ''
-    echo "Setting defaults for .zshrc and .bashrc..."
-    echo ''
-    echo "source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc && echo "added zsh-syntax-highlighting to .zshrc..."
-    echo ''
-    echo "source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc && echo "added zsh-autosuggestions to .zshrc..."
-    echo ''	
-fi
+# dotfiles install
+dotfilesInstall
