@@ -59,7 +59,7 @@ gpgconf --launch gpg-agent
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-#eval "$(oh-my-posh --init --shell zsh --config ~/.dotfiles/powershell/prompts/simple.json)"
+eval "$(oh-my-posh --init --shell zsh --config ~/.dotfiles/powershell/prompts/simple.json)"
 
 # ###-tns-completion-start-###
 # if [ -f /Users/Michel/.tnsrc ]; then
