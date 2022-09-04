@@ -11,8 +11,8 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 # Default username to hide "user@hostname" info
 DEFAULT_USER="bechelani"
 
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Load the secrets file
 if [[ -a ~/.secrets ]]
@@ -62,8 +62,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 eval "$(oh-my-posh --init --shell zsh --config ~/.dotfiles/powershell/prompts/simple.json)"
 
 # ###-tns-completion-start-###
-# if [ -f /Users/Michel/.tnsrc ]; then 
-#     source /Users/Michel/.tnsrc 
+# if [ -f /Users/Michel/.tnsrc ]; then
+#     source /Users/Michel/.tnsrc
 # fi
 # ###-tns-completion-end-###
 

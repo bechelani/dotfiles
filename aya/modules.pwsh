@@ -1,3 +1,0 @@
-Import-Module (Join-Path $HOME 'Dev/utils/scripts/modules/AyaModule.psm1')
-Import-Module (Join-Path $HOME 'Dev/utils/scripts/modules/AyaGitHubModule.psm1')
-Import-Module (Join-Path $HOME 'Dev/utils/scripts/modules/AyaSqlModule.psm1')
