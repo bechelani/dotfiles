@@ -22,7 +22,8 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "files.associations": {
-        "*.yml": "yaml"
+        "*.yml": "yaml",
+        "*.sql": "sql"
     },
     "files.exclude": {
         // "**/bin": true,
@@ -107,5 +108,6 @@
             "user": "{{put-username-here}}",
             "password": ""
         }
-    ]
+    ],
+    "extensions.ignoreRecommendations": true
 }
