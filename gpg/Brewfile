@@ -1,0 +1,11 @@
+cask_args appdir: '/Applications'
+
+tap 'homebrew/bundle'
+
+brew 'openssl'
+brew 'gnupg'
+brew 'hopenpgp-tools'
+brew 'pinentry-mac'
+brew 'wget'
+
+cask 'gpg-suite-no-mail'
