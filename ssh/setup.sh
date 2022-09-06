@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 #
 # setup configures ssh things.
-source ./script/prompt
-source ./script/linkfile
 
 echo "starting ssh/setup.sh"
 
@@ -11,7 +9,12 @@ echo $pwd
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
 
+source $DOTFILES_ROOT/script/prompt
+source $DOTFILES_ROOT/script/linkfile
+
 echo $pwd
+
+set -e
 
 setupSsh () {
   if [ ! -d "$HOME/.ssh" ]; then
@@ -32,7 +35,7 @@ downloadPublicSshKey () {
   curl -LSso ~/.ssh/id_rsa_yubikey.pub https://raw.githubusercontent.com/bechelani/public_keys/main/id_rsa_yubikey.pub && success 'ssh key downloaded'
 }
 
-configureSsh() {
+configureSsh () {
   info "configuring ssh"
 
   local overwrite_all=false backup_all=false skip_all=false
