@@ -11,7 +11,7 @@ source $DOTFILES_ROOT/script/linkfile
 set -e
 
 setupSsh () {
-  if [ ! -d "$HOME/.ssh" ]; then
+  if [ ! -d "$HOME/.ssh/sockets" ]; then
     echo ""
     info "creating ssh directory"
     mkdir -p ~/.ssh/sockets && success "ssh directory created"
