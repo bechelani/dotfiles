@@ -85,7 +85,7 @@ install () {
   configureGitCompletion
 
   # setup ssh
-  $DOTFILES_ROOT/ssh/setup.sh
+  bash $DOTFILES_ROOT/ssh/setup.sh
 
   # ask if need gpg
   echo ""
@@ -94,7 +94,7 @@ install () {
   if [[ $REPLY =~ ^[Yy]$ ]]
   then
     # setup gpg
-    $DOTFILES_ROOT/gpg/setup.sh
+    bash $DOTFILES_ROOT/gpg/setup.sh
 
     setup_gitconfig_with_gpg
 
