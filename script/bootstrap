@@ -10,28 +10,6 @@ set -e
 
 echo ''
 
-setup_gitconfig () {
-  if ! [ -f git/gitconfig.local.symlink ]
-  then
-    info 'setup gitconfig'
-
-    git_credential='cache'
-    if [ "$(uname -s)" == "Darwin" ]
-    then
-      git_credential='osxkeychain'
-    fi
-
-    user ' - What is your github author name?'
-    read -e git_authorname
-    user ' - What is your github author email?'
-    read -e git_authoremail
-
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.local.symlink.example > git/gitconfig.local.symlink
-
-    success 'gitconfig'
-  fi
-}
-
 
 link_file () {
   local src=$1 dst=$2
@@ -168,7 +146,7 @@ beche_mods () {
 
 beche_symlinks () {
   # symlink .dotfiles bin to ~
-  ln -s $HOME/.dotfiles/bin $HOME/bin && success "symlink for $HOME/bin folder created"
+  #ln -s $HOME/.dotfiles/bin $HOME/bin && success "symlink for $HOME/bin folder created"
 
   # symlink .dotfiles tmux to ~
   #ln -s $HOME/.dotfiles/tmux $HOME/.tmux && success "symlink for $HOME/.tmux folder created"
@@ -189,7 +167,7 @@ beche_symlinks () {
   #then
   #  sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
   #  success "symlink for airport created"
-  #else 
+  #else
   #  info "symlink for airport already exists"
   #fi
 }
@@ -250,7 +228,7 @@ beche_itermConfig () {
       else
           fail "failed to apply your custom colors..." >&2
   fi
-  else 
+  else
       info "You chose not to use iTerm2 or your custom colors."
   fi
 }
@@ -267,7 +245,7 @@ beche_configFix () {
   if [ ! -d "$HOME/.config" ]; then
     info "$HOME/.config doesn't exist, nothing to fix"
   else
-    sudo chown $(whoami) $HOME/.config 
+    sudo chown $(whoami) $HOME/.config
     success '.config permissions fixed'
   fi
 }

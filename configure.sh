@@ -76,16 +76,6 @@ zshZInstall () {
     fi
 }
 
-configureGitCompletion () {
-    GIT_VERSION=`git --version | awk '{print $3}'`
-    URL="https://raw.github.com/git/git/v$GIT_VERSION/contrib/completion/git-completion.bash"
-    success "git-completion for $GIT_VERSION downloaded"
-    if ! curl "$URL" --silent --output "$HOME/.git-completion.bash"; then
-        echo "ERROR: Couldn't download completion script. Make sure you have a working internet connection." && exit 1
-        fail 'git completion download failed'
-    fi
-}
-
 ohmyzshInstall () {
     # oh-my-zsh install
     if [ -d ~/.oh-my-zsh/ ] ; then
@@ -110,22 +100,24 @@ ohmyzshInstall () {
     fi
 }
 
-ohmyzshPluginInstall () {
-    # oh-my-zsh plugin install
-    if [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-completions" ]; then
+zshPluginInstall () {
+    # zsh plugin install
+    if [ -d "$HOME/.zsh/zsh-completions" ]; then
         info 'zsh-completions already installed'
     else
-        git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions && success 'zsh-completions installed'
+        git clone https://github.com/zsh-users/zsh-completions ~/.zsh/zsh-completions && success 'zsh-completions installed'
     fi
-    if [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
+
+    if [ -d "$HOME/.zsh/zsh-autosuggestions" ]; then
         info 'zsh-autosuggestions already installed'
     else
-        git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions && success 'zsh-autosuggestions installed'
+        git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions && success 'zsh-autosuggestions installed'
     fi
-    if [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
+
+    if [ -d "$HOME/.zsh/zsh-syntax-highlighting" ]; then
         info 'zsh-syntax-highlighting already installed'
     else
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting && success 'zsh-syntax-highlighting installed'
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting && success 'zsh-syntax-highlighting installed'
     fi
 }
 
@@ -135,7 +127,7 @@ pl9kInstall () {
         info 'powerlevel9k already installed'
     else
         echo "Now installing powerlevel9k..."
-    git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k && success 'powerlevel9k installed'
+        git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k && success 'powerlevel9k installed'
     fi
 }
 
@@ -215,7 +207,7 @@ pathogenInstall () {
         info 'pathogen already installed'
     else
         mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-            curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && success 'pathogen installed'
+        curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && success 'pathogen installed'
     fi
 }
 
@@ -244,7 +236,7 @@ brewUpdate
 
 # zsh setup
 zshInstall
-configureGitCompletion
+zshPluginInstall
 
 # oh my posh setup
 ohmyposhInstall
@@ -252,7 +244,6 @@ ohmyposhInstall
 # oh my zsh setup
 #ohmyzshInstall
 #zshZInstall
-#ohmyzshPluginInstall
 #pl9kInstall
 #pl10kInstall
 #tmuxTpmInstall
