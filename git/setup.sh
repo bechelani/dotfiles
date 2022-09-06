@@ -56,7 +56,7 @@ configureGitCompletion () {
 }
 
 setup_gitconfig_with_gpg () {
-  if ! [ -f git/gitconfig.local.symlink ]
+  if ! [ -f $DOTFILES_ROOT/git/gitconfig.local.symlink ]
   then
     info 'setup gitconfig with GPG'
 
@@ -65,12 +65,15 @@ setup_gitconfig_with_gpg () {
     user ' - What is your github author email?'
     read -e git_authoremail
 
-    gpg_program = "$(brew --prefix gpg)/bin/gpg"
+    gpg_program="$(brew --prefix gpg)/bin/gpg"
+    KEYID="343523AA"
 
-    sed -e "s/AUTHORNAME/$git_authorname/g" \
-        -e "s/AUTHOREMAIL/$git_authoremail/g" \
-        -e "s/SIGNINGKEY/$KEYID/g" \
-        -e "s/GPGPROGRAM/$gpg_program/g" \
+    gpg_program_esc=$(sed 's/[\*\.]/\\&/g' <<<"$gpg_program")
+
+    sed -e "s~AUTHORNAME~$git_authorname~g" \
+        -e "s~AUTHOREMAIL~$git_authoremail~g" \
+        -e "s~SIGNINGKEY~$KEYID~g" \
+        -e "s~GPGPROGRAM~$gpg_program~g" \
         git/gitconfig.local.symlink.gpg.example > git/gitconfig.local.symlink
 
     success 'gitconfig'
@@ -105,10 +108,10 @@ install () {
         echo "GPG was not setup correct..." >&2
   fi
   else
-      echo ""
-      echo "You chose not to use GPG."
-      echo ""
-      setup_gitconfig
+    echo ""
+    echo "You chose not to use GPG."
+    echo ""
+    setup_gitconfig
   fi
 }
 
