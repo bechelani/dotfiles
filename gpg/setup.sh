@@ -30,12 +30,17 @@ downloadPublicGpgKey () {
 
 importAndTrustGpgKey () {
   #KEYID=$(gpg --with-fingerprint public_gpg.asc)
-  KEYID="607D2EC1343523AA"
+  KEYID="343523AA"
   info "importing public gpg key ($KEYID)"
   gpg --import ./public_gpg.asc
 
   info "raising level trust of public gpg key ($KEYID)"
-  echo "$KEYID:6:" | gpg --import-ownertrust
+
+  echo "$( \
+    gpg --list-keys --fingerprint \
+    | grep $KEYID -A 1 | tail -1 \
+    | tr -d '[:space:]' | awk 'BEGIN { FS = "=" } ; { print $2 }' \
+  ):6:" | gpg --import-ownertrust;
 
   success "gpg key configured"
 }
