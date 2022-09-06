@@ -31,7 +31,7 @@ removePublicSshKey () {
   if [ -f $HOME/.ssh/id_rsa_yubikey.pub ] ; then
     echo ""
     info "Deleting current id_rsa_yubikey.pub..."
-    rm $HOME/.ssh/id_rsa_yubikey.pub && success "id_rsa_yubikey.old.pub deleted"
+    rm $HOME/.ssh/id_rsa_yubikey.pub && success "id_rsa_yubikey.pub deleted"
   fi
 
   if [ -f $HOME/.ssh/id_rsa_yubikey.old.pub ] ; then
