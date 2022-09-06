@@ -29,8 +29,8 @@ downloadPublicGpgKey () {
 }
 
 importAndTrustGpgKey () {
-  KEYID=$(gpg --with-fingerprint public_gpg.asc)
-
+  #KEYID=$(gpg --with-fingerprint public_gpg.asc)
+  KEYID="607D2EC1343523AA"
   info "importing public gpg key ($KEYID)"
   gpg --import ./public_gpg.asc
 
