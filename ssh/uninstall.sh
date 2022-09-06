@@ -2,17 +2,11 @@
 #
 # setup configures ssh things.
 
-echo "starting ssh/uninstall.sh"
-
-echo $pwd
-
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
 
 source $DOTFILES_ROOT/script/prompt
 source $DOTFILES_ROOT/script/linkfile
-
-echo $pwd
 
 set -e
 
@@ -35,13 +29,13 @@ restoreSshConfiguration () {
 removePublicSshKey () {
 
   if [ -f $HOME/.ssh/id_rsa_yubikey.pub ] ; then
-    echo "Deleting current id_rsa_yubikey.pub..."
+    info "Deleting current id_rsa_yubikey.pub..."
     echo ""
-    mv $HOME/.ssh/id_rsa_yubikey.pub $HOME/.ssh/id_rsa_yubikey.old.pub && success "id_rsa_yubikey.old.pub deleted"
+    rm $HOME/.ssh/id_rsa_yubikey.pub && success "id_rsa_yubikey.old.pub deleted"
   fi
 
   if [ -f $HOME/.ssh/id_rsa_yubikey.old.pub ] ; then
-    echo "Restoring old id_rsa_yubikey.pub..."
+    info "Restoring old id_rsa_yubikey.pub..."
     echo ""
     mv $HOME/.ssh/id_rsa_yubikey.old.pub $HOME/.ssh/id_rsa_yubikey.pub && success "id_rsa_yubikey.old.pub restored"
   fi
@@ -49,6 +43,11 @@ removePublicSshKey () {
 }
 
 removeSshDirectory () {
+
+  if [ -d "$HOME/.ssh/sockets" ]; then
+    info "deleting .ssh/sockets directory"
+    rm -rf $HOME/.ssh/sockets && success "sockets directory deleted"
+  fi
 
   if [ ! "$(ls -A $HOME/.ssh)" ]; then
     info "deleting ssh directory"
