@@ -50,8 +50,7 @@ removePublicSshKey () {
 
 removeSshDirectory () {
 
-  if [ "$(ls -A $HOME/.ssh)" ]; then
-	else
+  if [ ! "$(ls -A $HOME/.ssh)" ]; then
     info "deleting ssh directory"
     rm -rf $HOME/.ssh && success "ssh directory deleted"
 	fi
