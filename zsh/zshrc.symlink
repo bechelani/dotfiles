@@ -5,14 +5,11 @@
 export DOTFILES=~/.dotfiles
 export TERM=xterm-256color
 
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+#export GPG_TTY="$(tty)"
+#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 # Default username to hide "user@hostname" info
-DEFAULT_USER="bechelani"
-
-#source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#DEFAULT_USER="bechelani"
 
 # Load the secrets file
 if [[ -a ~/.secrets ]]
@@ -53,55 +50,10 @@ unset config_files
 # az cli
 autoload bashcompinit && bashcompinit
 
-gpgconf --launch gpg-agent
+#gpgconf --launch gpg-agent
 
 #export PATH="/usr/local/sbin:$PATH"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 eval "$(oh-my-posh --init --shell zsh --config ~/.dotfiles/powershell/prompts/simple.json)"
-
-# ###-tns-completion-start-###
-# if [ -f /Users/Michel/.tnsrc ]; then
-#     source /Users/Michel/.tnsrc
-# fi
-# ###-tns-completion-end-###
-
-# function omp_preexec() {
-#   omp_start_time=$(oh-my-posh --millis)
-# }
-
-# function omp_precmd() {
-#   omp_elapsed=-1
-#   if [ $omp_start_time ]; then
-#     omp_now=$(oh-my-posh --millis)
-#     omp_elapsed=$(($omp_now-$omp_start_time))
-#   fi
-#   eval "$(oh-my-posh --config /usr/local/opt/oh-my-posh/themes/paradox.omp.json --error $? --execution-time $omp_elapsed --eval)"
-#   unset omp_start_time
-#   unset omp_now
-#   unset omp_elapsed
-# }
-
-# function install_omp_hooks() {
-#   for s in "${preexec_functions[@]}"; do
-#     if [ "$s" = "omp_preexec" ]; then
-#       return
-#     fi
-#   done
-#   preexec_functions+=(omp_preexec)
-
-#   for s in "${precmd_functions[@]}"; do
-#     if [ "$s" = "omp_precmd" ]; then
-#       return
-#     fi
-#   done
-#   precmd_functions+=(omp_precmd)
-# }
-
-# if [ "$TERM" != "linux" ]; then
-#   install_omp_hooks
-# fi
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
