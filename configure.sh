@@ -6,9 +6,18 @@ source /dev/stdin <<< "$(curl -fsSL https://raw.githubusercontent.com/bechelani/
 xcodeInstall () {
     # install xcode dependency for homebrew
 
-    info "installing Command Line Tools (CLT) for Xcode"
-    xcode-select --install
-    success "Command Line Tools (CLT) for Xcode installed"
+    check=$((xcode-select -p) 1>/dev/null;echo $?;)
+
+    if [[ "$check" == "0" ]] ; then
+      echo ""
+      info "Command Line Tools (CLT) for Xcode already installed"
+    else
+      echo ""
+      info "installing Command Line Tools (CLT) for Xcode"
+      read -p "please wait for the tools to finish installing then press enter." -n 1 -r
+      xcode-select --install
+      success "Command Line Tools (CLT) for Xcode installed"
+    fi
 }
 
 brewInstall () {
@@ -125,12 +134,6 @@ dotfilesInstall () {
       echo ""
       echo "You chose not to apply your macOS dotfiles. You will need to configure your environment manually..."
       echo ""
-      #echo "Setting defaults for .zshrc and .bashrc..."
-      #echo ""
-      #echo "source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc && echo "added zsh-syntax-highlighting to .zshrc..."
-      #echo ""
-      #echo "source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc && echo "added zsh-autosuggestions to .zshrc..."
-      #echo ""
   fi
 }
 
