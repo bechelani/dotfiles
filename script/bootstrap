@@ -8,9 +8,6 @@ DOTFILES_ROOT=$(pwd -P)
 
 set -e
 
-echo ''
-
-
 link_file () {
   local src=$1 dst=$2
 
@@ -98,19 +95,6 @@ install_dotfiles () {
   done
 }
 
-add_cron () {
-  local frequency="*/15 * * * *"
-  local command=$1
-  local job="$frequency $command"
-  cat <(fgrep -i -v "$command" <(crontab -l)) <(echo "$job") | crontab -
-}
-
-add_line () {
-  local command=$1
-  local job="$command"
-  cat <(fgrep -i -v "$command" <(crontab -l)) <(echo "$job") | crontab -
-}
-
 install_dependencies () {
   # If we're on a Mac, let's install and setup homebrew.
   if [ "$(uname -s)" == "Darwin" ]
@@ -172,46 +156,6 @@ beche_symlinks () {
   #fi
 }
 
-# jdcolors () {
-#   # colorls setup
-#   sudo gem install colorls && success 'ls colors have been configured'
-# }
-
-beche_crontab () {
-  #crontab additions
-  add_line "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-    if [[ $? -eq 0 ]]
-    then
-    success "$PATH added to crontab"
-    else
-    info "ERROR $PATH could not be added to crontab"
-    fi
-
-  add_cron "speedtest-cli --simple > ~/bin/bandwidth.log"
-    if [[ $? -eq 0 ]]
-    then
-    success "crontab created for speedtest cli --simple"
-    else
-    info "ERROR crontab could not be created for speedtest cli --simple"
-    fi
-
-  add_cron "speedtest-cli --json > ~/bin/bandwidth.json"
-    if [[ $? -eq 0 ]]
-    then
-    success "crontab created for speedtest cli --json"
-    else
-    info "ERROR crontab could not be created for speedtest cli --json"
-    fi
-
-  # first run of speedtest-cli
-  echo "Running speedtest-cli for tmux status bar data now..."
-  speedtest-cli --simple > ~/bin/bandwidth.log
-  success "speedtest-cli bandwidth.log created"
-
-  speedtest-cli --json > ~/bin/bandwidth.json
-  success "speedtest-cli bandwidth.json created"
-}
-
 beche_itermConfig () {
   # iterm2 config
   read -p "Do you currently use iTerm2 and would you like to set your custom colors? y/n " -n 1 -r
@@ -250,14 +194,11 @@ beche_configFix () {
   fi
 }
 
-setup_gitconfig
 install_dotfiles
 install_dependencies
 
 beche_mods
 beche_symlinks
-#beche_colors
-#beche_crontab
 beche_itermConfig
 beche_fontSetup
 beche_configFix
