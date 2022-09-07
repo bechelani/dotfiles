@@ -1,15 +1,7 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
+# Path to your dotfiles.
 export DOTFILES=~/.dotfiles
+
 export TERM=xterm-256color
-
-#export GPG_TTY="$(tty)"
-#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-
-# Default username to hide "user@hostname" info
-#DEFAULT_USER="bechelani"
 
 # Load the secrets file
 if [[ -a ~/.secrets ]]
@@ -47,13 +39,7 @@ done
 
 unset config_files
 
-# az cli
-autoload bashcompinit && bashcompinit
+#autoload bashcompinit && bashcompinit
 
-#gpgconf --launch gpg-agent
-
-#export PATH="/usr/local/sbin:$PATH"
-
-#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
+# load oh-my-posh
 eval "$(oh-my-posh --init --shell zsh --config ~/.dotfiles/powershell/prompts/simple.json)"
