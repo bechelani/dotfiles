@@ -52,56 +52,55 @@ zshInstall () {
 }
 
 zshPluginInstall () {
-    # zsh plugin install
+  # zsh plugin install
 
-    if [ -d "$HOME/.zsh/zsh-completions" ]; then
-        info 'zsh-completions already installed'
-    else
-        git clone https://github.com/zsh-users/zsh-completions ~/.zsh/zsh-completions && success 'zsh-completions installed'
-    fi
+  if [ -d "$HOME/.zsh/zsh-completions" ]; then
+    info 'zsh-completions already installed'
+  else
+    git clone https://github.com/zsh-users/zsh-completions ~/.zsh/zsh-completions && success 'zsh-completions installed'
+  fi
 
-    if [ -d "$HOME/.zsh/zsh-autosuggestions" ]; then
-        info 'zsh-autosuggestions already installed'
-    else
-        git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions && success 'zsh-autosuggestions installed'
-    fi
+  if [ -d "$HOME/.zsh/zsh-autosuggestions" ]; then
+    info 'zsh-autosuggestions already installed'
+  else
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions && success 'zsh-autosuggestions installed'
+  fi
 
-    if [ -d "$HOME/.zsh/zsh-syntax-highlighting" ]; then
-        info 'zsh-syntax-highlighting already installed'
-    else
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting && success 'zsh-syntax-highlighting installed'
-    fi
+  if [ -d "$HOME/.zsh/zsh-syntax-highlighting" ]; then
+    info 'zsh-syntax-highlighting already installed'
+  else
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting && success 'zsh-syntax-highlighting installed'
+  fi
 
-    if [ -d "$HOME/.zsh/zsh-z" ]; then
-      info "zsh-z already exists..."
-    else
-      git clone https://github.com/agkozak/zsh-z ~/.zsh/zsh-z && success "zsh-z installed"
-    fi
+  if [ -d "$HOME/.zsh/zsh-z" ]; then
+    info "zsh-z already exists..."
+  else
+    git clone https://github.com/agkozak/zsh-z ~/.zsh/zsh-z && success "zsh-z installed"
+  fi
 }
 
 ohmyposhInstall () {
-    # oh-my-posh install
+  # oh-my-posh install
 
-    if test $(which oh-my-posh); then
-      info "oh-my-posh is already installed..."
-      read -p "Would you like to update oh-my-posh now? y/n " -n 1 -r
-      echo ""
-      if [[ $REPLY =~ ^[Yy]$ ]] ; then
-        brew update && brew upgrade oh-my-posh
-        if [[ $? -eq 0 ]]
-        then
-          success "Update complete..."
-        else
-          fail "Update not complete..."
-        fi
+  if test $(which oh-my-posh); then
+    info "oh-my-posh is already installed..."
+    read -p "Would you like to update oh-my-posh now? y/n " -n 1 -r
+    echo ""
+    if [[ $REPLY =~ ^[Yy]$ ]] ; then
+      brew update && brew upgrade oh-my-posh
+      if [[ $? -eq 0 ]] ; then
+        success "Update complete..."
+      else
+        fail "Update not complete..."
       fi
-    else
-      echo ""
-      echo "oh-my-posh not found, now installing oh-my-posh..."
-      echo ""
-      brew install jandedobbeleer/oh-my-posh/oh-my-posh
-      success "oh-my-posh installed"
     fi
+  else
+    echo ""
+    echo "oh-my-posh not found, now installing oh-my-posh..."
+    echo ""
+    brew install jandedobbeleer/oh-my-posh/oh-my-posh
+    success "oh-my-posh installed"
+  fi
 }
 
 dotfilesInstall () {
