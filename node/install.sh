@@ -9,10 +9,10 @@ source $DOTFILES_ROOT/script/prompt
 
 set -e
 
-echo ""
+echo
 
 info "Installing NodeJS"
 
-nvm install --lts
+#nvm install --lts
 
 success "NodeJS installed"
