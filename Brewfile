@@ -3,6 +3,9 @@ cask_args appdir: '/Applications'
 tap 'homebrew/bundle'
 
 brew 'nvm'
+brew 'docker'
+brew 'chruby'
+brew 'ruby-install'
 
 cask '1password'
 cask 'google-chrome'

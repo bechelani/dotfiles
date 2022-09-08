@@ -10,7 +10,7 @@ xcodeInstall () {
 
     if [[ "$check" == "0" ]] ; then
       echo ""
-      info "Command Line Tools (CLT) for Xcode already installed"
+      success "Command Line Tools (CLT) for Xcode is already installed"
     else
       echo ""
       info "installing Command Line Tools (CLT) for Xcode"
@@ -28,7 +28,7 @@ brewInstall () {
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     success "brew installed"
   else
-    info "brew is already installed"
+    sucess "brew is already installed"
   fi
 }
 
@@ -41,10 +41,10 @@ zshInstall () {
   # zsh install
   # todo add in check for macOS 10.15 since zsh is default
   if test $(which zsh); then
-      info "zsh already installed..."
+      succes "zsh is already installed"
   else
       brew install zsh
-      success 'zsh installed'
+      success "zsh installed"
   fi
 
   #brew install zsh-completions
@@ -55,25 +55,25 @@ zshPluginInstall () {
   # zsh plugin install
 
   if [ -d "$HOME/.zsh/zsh-completions" ]; then
-    info 'zsh-completions already installed'
+    success "zsh-completions is already installed"
   else
-    git clone https://github.com/zsh-users/zsh-completions ~/.zsh/zsh-completions && success 'zsh-completions installed'
+    git clone https://github.com/zsh-users/zsh-completions ~/.zsh/zsh-completions && success "zsh-completions installed"
   fi
 
   if [ -d "$HOME/.zsh/zsh-autosuggestions" ]; then
-    info 'zsh-autosuggestions already installed'
+    success "zsh-autosuggestions already installed"
   else
-    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions && success 'zsh-autosuggestions installed'
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions && success "zsh-autosuggestions installed"
   fi
 
   if [ -d "$HOME/.zsh/zsh-syntax-highlighting" ]; then
-    info 'zsh-syntax-highlighting already installed'
+    success "zsh-syntax-highlighting is already installed"
   else
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting && success 'zsh-syntax-highlighting installed'
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting && success "zsh-syntax-highlighting installed"
   fi
 
   if [ -d "$HOME/.zsh/zsh-z" ]; then
-    info "zsh-z already exists..."
+    success "zsh-z is already installed"
   else
     git clone https://github.com/agkozak/zsh-z ~/.zsh/zsh-z && success "zsh-z installed"
   fi
@@ -83,10 +83,10 @@ ohmyposhInstall () {
   # oh-my-posh install
 
   if test $(which oh-my-posh); then
-    info "oh-my-posh is already installed..."
+    success "oh-my-posh is already installed"
     echo
     read -p "Would you like to update oh-my-posh now? y/n " -n 1 -r
-    echo ""
+    echo
     if [[ $REPLY =~ ^[Yy]$ ]] ; then
       brew update && brew upgrade oh-my-posh
       if [[ $? -eq 0 ]] ; then
@@ -96,9 +96,9 @@ ohmyposhInstall () {
       fi
     fi
   else
-    echo ""
+    echo
     echo "oh-my-posh not found, now installing oh-my-posh..."
-    echo ""
+    echo
     brew install jandedobbeleer/oh-my-posh/oh-my-posh
     success "oh-my-posh installed"
   fi
@@ -108,9 +108,9 @@ dotfilesInstall () {
   # dotfiles install
 
   # Pull down personal dotfiles
-  echo ""
+  echo
   read -p "Do you want to use your dotfiles? y/n " -n 1 -r
-  echo    # (optional) move to a new line
+  echo
   if [[ $REPLY =~ ^[Yy]$ ]]
   then
       echo ""
