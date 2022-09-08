@@ -139,7 +139,6 @@ dotfilesInstall () {
 
 # xcode setup
 xcodeInstall
-
 # brew setup
 brewInstall
 brewUpdate
