@@ -23,7 +23,7 @@ else
   info "  trying to launch VS Code"
 
   user "Please launch VS Code then press enter."
-  read -e vscode -r
+  read -n 1 -e vscode
 
   if [ -d "$HOME/Library/Application Support/Code/User" ] ; then
     link_file "$DOTFILES_ROOT/code/settings.json" "$HOME/Library/Application Support/Code/User/settings.json" && success "settings.json for vs code symlink created"
