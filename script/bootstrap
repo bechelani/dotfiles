@@ -11,6 +11,7 @@ source $DOTFILES_ROOT/script/linkfile
 set -e
 
 install_dotfiles () {
+  echo
   info 'installing dotfiles'
 
   local overwrite_all=false backup_all=false skip_all=false
@@ -26,11 +27,12 @@ install_dependencies () {
   # If we're on a Mac, let's install and setup homebrew.
   if [ "$(uname -s)" == "Darwin" ]
   then
+    echo
     info "installing dependencies"
-    if source bin/dot | while read -r data; do info "$data"; done
+    if source bin/dot | while read -r data; do "$data"; done
     then
       success "dependencies installed"
-      echo ''
+      echo
       echo "Now updating dependencies..."
       pip3 install --upgrade setuptools
     else

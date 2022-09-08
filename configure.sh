@@ -84,6 +84,7 @@ ohmyposhInstall () {
 
   if test $(which oh-my-posh); then
     info "oh-my-posh is already installed..."
+    echo
     read -p "Would you like to update oh-my-posh now? y/n " -n 1 -r
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]] ; then
@@ -114,11 +115,11 @@ dotfilesInstall () {
   then
       echo ""
       echo "Now pulling down your dotfiles..."
-      git clone https://github.com/bechelani/dotfiles.git ~/.dotfiles
+      git clone https://github.com/bechelani/dotfiles.git ~/.dotfiles -q
       echo ""
       cd $HOME/.dotfiles && echo "switched to .dotfiles dir..."
       echo ""
-      echo "Checking out macOS branch..." && git checkout mac
+      echo "Checking out macOS branch..." && git checkout mac -q
       echo ""
       echo "Now configuring symlinks..." && $HOME/.dotfiles/script/bootstrap
       echo ""
