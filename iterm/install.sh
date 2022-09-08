@@ -14,7 +14,7 @@ echo ""
 info "configuring iTerm2"
 
 user "Do you currently use iTerm2 and would you like to set your custom colors? y/n "
-read -n 1 action
+read -n 1 action -r
 
 if [[ $action =~ ^[Yy]$ ]] ; then
   # Specify the preferences directory
