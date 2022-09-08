@@ -29,7 +29,7 @@ install_dependencies () {
   then
     echo
     info "installing dependencies"
-    if source bin/dot | while read -r data; do "$data"; done
+    if source bin/dot | while read -r data; do echo "$data"; done
     then
       success "dependencies installed"
       echo
