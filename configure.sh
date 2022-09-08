@@ -47,8 +47,8 @@ zshInstall () {
       success 'zsh installed'
   fi
 
-  brew install zsh-completions
-  success 'zsh-completions installed'
+  #brew install zsh-completions
+  #success 'zsh-completions installed'
 }
 
 zshPluginInstall () {
