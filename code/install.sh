@@ -20,7 +20,7 @@ if [ -d "$HOME/Library/Application\ Support/Code/User" ] ; then
   #ln -s $HOME/.dotfiles/code/settings.json $HOME/Library/Application\ Support/Code/User/settings.json && success "settings.json for vs code symlink created"
 else
   info "  VS Code does not appear to be installed or has not been launched yet."
-  into "  trying to launch VS Code"
+  info "  trying to launch VS Code"
 
   code ~/Documents
 
