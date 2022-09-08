@@ -19,6 +19,18 @@ if [ -d "$HOME/Library/Application\ Support/Code/User" ] ; then
   #mv $HOME/Library/Application\ Support/Code/User/settings.json $HOME/Library/Application\ Support/Code/User/settings.old.json && success "settings.old.json created"
   #ln -s $HOME/.dotfiles/code/settings.json $HOME/Library/Application\ Support/Code/User/settings.json && success "settings.json for vs code symlink created"
 else
-  info "  symlink for vs code settings not created"
-  info "  VS Code does not appear to be installed or has not been launched yet. Cannot create symlink for VS Code User settings..."
+  info "  VS Code does not appear to be installed or has not been launched yet."
+  into "  trying to launch VS Code"
+
+  code ~/Documents
+
+  user "Please wait for VS Code to launch then press enter."
+  read -e vscode
+
+  if [ -d "$HOME/Library/Application\ Support/Code/User" ] ; then
+    link_file "$DOTFILES_ROOT/code/settings.json" "$HOME/Library/Application\ Support/Code/User/settings.json" && success "settings.json for vs code symlink created"
+  else
+    info "  symlink for vs code settings not created"
+    info "  VS Code does not appear to be installed or has not been launched yet. Cannot create symlink for VS Code User settings..."
+  fi
 fi
