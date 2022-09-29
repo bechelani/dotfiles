@@ -1,0 +1,8 @@
+Host *
+    ControlMaster auto
+    ControlPath  ~/.ssh/sockets/%r@%h-%p
+    ControlPersist  600
+
+Host github.com
+    IdentitiesOnly yes
+    IdentityFile ~/.ssh/id_rsa_yubikey.pub

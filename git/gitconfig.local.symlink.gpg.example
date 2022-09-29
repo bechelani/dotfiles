@@ -1,0 +1,8 @@
+[user]
+  name = AUTHORNAME
+  email = AUTHOREMAIL
+  signingkey = SIGNINGKEY
+[gpg]
+  program = GPGPROGRAM
+[commit]
+  gpgsign = true

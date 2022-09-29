@@ -1,13 +1,5 @@
 ﻿# bechelani does dotfiles - forked from jldeen's repo
 
-## Windows Configuration
-
-Run the following to configure Windows 10/11 from scratch...
-
-```pwsh
-Set-ExecutionPolicy Bypass; irm 'https://raw.githubusercontent.com/bechelani/dotfiles/win/configure.ps1' | iex;
-```
-
 ## macOS Configuration
 
 Run the following to configure macOS from scratch...
@@ -16,20 +8,9 @@ Run the following to configure macOS from scratch...
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/bechelani/dotfiles/mac/configure.sh)"
 ```
 
-## WSL Configuration
+It should go without saying, you should never run a script on your system without reading it to understand what changes it will make to your system. My scripts and code samples are no exception to the rule.
 
-Run the following to configure WSL from scratch...
-
-``` sh
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/bechelani/dotfiles/wsl/configure.sh)"
-```
-
-## install
-
-There are several "master" branches here: Win, WSL and MacOS;
-there are several "dev" branches here win-dev, wsl-dev and mac-dev.
-
-Check each master branch's README to see how to install for each of those environments.
+If you choose to use my dotfiles, my configure script will backup your current dotfiles, but will also make changes to your crontab - it's in your best interest to understand these changes prior to opting in.
 
 ## notes
 
@@ -57,8 +38,8 @@ symlinked without extension into `$HOME` when you run `script/bootstrap`.
 
 A lot of stuff. Seriously, a lot of stuff. Check them out in the file browser
 above and see what components may mesh up with you.
-[Fork holman's](https://github.com/holman/dotfiles/fork) or [Fork Jldeen's](htps://github.com/jldeen/dotfiles/fork), remove what you don't
-use, and build on what you do use.
+[Fork holman's](https://github.com/holman/dotfiles/fork) or [Fork jldeen's](htps://github.com/jldeen/dotfiles/fork) or [Fork mine](htps://github.com/bechelani/dotfiles/fork),
+remove what you don't use, and build on what you do use.
 
 ## components
 
@@ -87,14 +68,9 @@ said, I do use this as *my* dotfiles, so there's a good chance I may break
 something if I forget to make a check for a dependency.
 
 If you're brand-new to the project and run into any blockers, please
-[open an issue](https://github.com/jldeen/dotfiles/issues) on this repository
+[open an issue](https://github.com/bechelani/dotfiles/issues) on this repository
 and I'd love to get it fixed for you!
 
 ## thanks
 
-Holman forked [Ryan Bates](http://github.com/ryanb)' excellent
-[dotfiles](http://github.com/ryanb/dotfiles) for a couple years before the
-weight of his changes and tweaks inspired him to finally roll his own. But Ryan's
-dotfiles were an easy way to get into bash customization, and then to jump ship
-to zsh a bit later. A decent amount of the code in these dotfiles stem or are
-inspired from Ryan's original project.
+I forked [jldeen's](https://github.com/jldeen) excellent [dotfiles](https://github.com/jldeen/dotfiles).
