@@ -1,0 +1,19 @@
+##########################################
+# common function
+##########################################
+Function path { Write-Host $Env:PATH.Replace(';', "`n") }
+Function ls { Get-ChildItem -Force }
+
+##########################################
+# dotfiles aliasies
+##########################################
+Function dotfiles { ls -a | grep '^\.' | grep --invert-match '\.DS_Store\|\.$' }
+Function dotconfig { code ~/.dotfiles }
+
+##########################################
+# Easier Navigation aliases
+##########################################
+Function .. { cd .. }
+Function ... { cd ../.. }
+Function .... { cd ../../.. }
+Function ..... { cd ../../../.. }

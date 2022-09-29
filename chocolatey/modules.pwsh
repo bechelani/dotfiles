@@ -1,0 +1,3 @@
+# Initialize environmental variable ChocolateyToolsLocation by invoking choco Get-ToolsLocation function
+Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force
+Get-ToolsLocation
