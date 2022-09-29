@@ -1,0 +1,104 @@
+{
+    "breadcrumbs.enabled": true,
+    "coverage-gutters.coverageBaseDir": "coverage",
+    "coverage-gutters.coverageFileNames": [
+        "lcov.info",
+        "cov.xml",
+        "coverage.xml",
+        "jacoco.xml"
+    ],
+    "debug.console.fontSize": 14,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "editor.fontFamily": "FiraCode-Retina",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.minimap.enabled": true,
+    "editor.renderControlCharacters": false,
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        120
+    ],
+    "editor.tabSize": 4,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.associations": {
+        "*.yml": "yaml"
+    },
+    "files.exclude": {
+        // "**/bin": true,
+        // "**/obj": true
+    },
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "redhat.telemetry.enabled": false,
+    "terminal.integrated.defaultProfile.osx": "pwsh",
+    "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font'",
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.profiles.osx": {
+        "bash": {
+            "path": "bash",
+            "args": [
+                "-l"
+            ],
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh",
+            "args": [
+                "-l"
+            ]
+        },
+        "fish": {
+            "path": "fish",
+            "args": [
+                "-l"
+            ]
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell",
+            "args": [
+                "-l"
+            ]
+        }
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "window.zoomLevel": 0,
+    "workbench.colorCustomizations": {
+        "terminal.background": "#012456",
+        "terminal.foreground": "#CCCCCC",
+        "terminalCursor.background": "#012456",
+        "terminalCursor.foreground": "#FFFFFF",
+        "terminal.ansiBlack": "#0C0C0C",
+        "terminal.ansiBlue": "#0037DA",
+        "terminal.ansiBrightBlack": "#767676",
+        "terminal.ansiBrightBlue": "#3B78FF",
+        "terminal.ansiBrightCyan": "#61D6D6",
+        "terminal.ansiBrightGreen": "#16C60C",
+        "terminal.ansiBrightMagenta": "#B4009E",
+        "terminal.ansiBrightRed": "#E74856",
+        "terminal.ansiBrightWhite": "#F2F2F2",
+        "terminal.ansiBrightYellow": "#F9F1A5",
+        "terminal.ansiCyan": "#3A96DD",
+        "terminal.ansiGreen": "#13A10E",
+        "terminal.ansiMagenta": "#881798",
+        "terminal.ansiRed": "#C50F1F",
+        "terminal.ansiWhite": "#CCCCCC",
+        "terminal.ansiYellow": "#C19C00"
+    },
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.sideBar.location": "left",
+    "mssql.connections": [
+        {
+            "server": "{{put-server-name-here}}",
+            "database": "{{put-database-name-here}}",
+            "user": "{{put-username-here}}",
+            "password": ""
+        }
+    ]
+}

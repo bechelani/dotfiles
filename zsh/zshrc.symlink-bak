@@ -1,0 +1,70 @@
+#########################################
+# Michel Bechelani's ZSH configuration
+##########################################
+
+# Path to your oh-my-zsh configuration.
+#ZSH=~/.oh-my-zsh
+ZSH=~/.dotfiles
+
+# Set name of the theme to load.
+#ZSH_THEME="bechelani2"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment following line if you want to the command execution time stamp shown
+# in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+#plugins=()
+
+##########################################
+# Load External configuration files
+##########################################
+# Load oh-my-zsh
+#if [ -e $ZSH/oh-my-zsh.sh ]; then
+#  source $ZSH/oh-my-zsh.sh
+#fi
+
+# Load the secrets file
+if [[ -a ~/.secrets ]]
+then
+  source ~/.secrets
+fi
+
+# all of our zsh files
+typeset -U config_files
+config_files=($ZSH/**/*.zsh)
+
+# load the path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done
+
+# load everything but the path and completion files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+do
+  source $file
+done
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+# compinit
+# autoload -Uz compinit
+compinit
+
+# load every completion after autocomplete loads
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  source $file
+done
+
+unset config_files

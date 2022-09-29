@@ -1,0 +1,3 @@
+Import-Module '/Users/Michel/.local/share/powershell/Modules/nvm/2.5.1/nvm.psd1'
+
+Set-NodeVersion 14

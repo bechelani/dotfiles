@@ -1,0 +1,9 @@
+# List all files colorized in long format
+Function ls { & /bin/ls -lhA -G }
+Function ll { & /bin/ls -lF -G }
+
+# List all files colorized in long format, including dot files
+Function la { & /bin/ls -laF -G }
+
+# List only directories
+Function lsd { & /bin/ls -lF -G | grep "^d" }

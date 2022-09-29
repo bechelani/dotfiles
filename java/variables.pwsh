@@ -1,0 +1,12 @@
+$Env:JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
+$Env:JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
+$Env:JAVA_14_HOME=$(/usr/libexec/java_home -v 14)
+
+Function java8 { $Env:JAVA_HOME=$Env:JAVA_8_HOME }
+Function java11 { $Env:JAVA_HOME=$Env:JAVA_11_HOME }
+Function java14 { $Env:JAVA_HOME=$Env:JAVA_14_HOME }
+
+$Env:ANDROID_HOME="/Users/Michel/Library/Android/sdk"
+$Env:ANDROID_SDK_ROOT="/Users/Michel/Library/Android/sdk"
+
+&java11
