@@ -8,7 +8,7 @@ if ($host.Name -eq 'ConsoleHost') {
 Import-Module '/Users/Michel/Dev/utils/scripts/modules/AyaModule.psm1'
 
 Import-Module -Name Terminal-Icons
-Import-Module oh-my-posh
+# Import-Module oh-my-posh
 
 # oh-my-posh --init --shell pwsh --config "/Users/Michel/.dotfiles/powershell/prompts/ohmyposhposhv3-v2.json" | Invoke-Expression
 

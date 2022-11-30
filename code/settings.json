@@ -41,7 +41,6 @@
     ],
     "sonarlint.pathToNodeExecutable": "/Users/Michel/.nvm/versions/node/v12.22.3/bin/node",
     "terminal.integrated.defaultProfile.osx": "pwsh",
-    "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font'",
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.profiles.osx": {
         "bash": {
@@ -109,5 +108,14 @@
             "password": ""
         }
     ],
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "azure.resourceFilter": [
+        "c32ce235-4d9a-4296-a647-a9edb2912ac9/11844065-4a70-473d-a17c-9c2b636fc250"
+    ],
+    "azureResourceGroups.groupBy": "resourceGroup",
+    "vscode-edge-devtools.webhint": false,
+    "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font'"
 }
