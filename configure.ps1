@@ -57,6 +57,12 @@ try {
     #################################
     LogInfo -Message "Installing pre-requisites"
 
+    # Install Git
+    &winget install -e --id Git.Git
+
+    # Update PowerShellGet
+    Update-Module PowerShellGet -Force
+
     # Install oh-my-posh
     Install-Module oh-my-posh -Force
 

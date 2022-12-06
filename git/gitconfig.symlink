@@ -31,10 +31,11 @@
   ui = true
 [core]
   excludesfile = ~/.gitignore
-  editor = atom --wait
+  editor = notepad
   autocrlf = input
   filemode = false
   ignorecase = true
+  longpaths = true
 [apply]
   whitespace = nowarn
 [diff]
@@ -48,10 +49,10 @@
 [mergetool "bc3"]
   trustExitCode = true
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
   required = true
-	process = git-lfs filter-process
+  process = git-lfs filter-process
 [filter "media"]
   required = true
   clean = git media clean %f
