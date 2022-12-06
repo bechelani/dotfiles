@@ -58,10 +58,13 @@ try {
     LogInfo -Message "Installing pre-requisites"
 
     # Install Git
-    &winget install -e --id Git.Git
+    $isGitInstalled = $null -ne ( (Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*) + (Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*) | Where-Object { $null -ne $_.DisplayName -and $_.Displayname.Contains('Git') })
+    if ($isGitInstalled -ne $true) {
+        &winget install -e --id Git.Git
+    }
 
     # Update PowerShellGet
-    Update-Module PowerShellGet -Force
+    Install-Module PowerShellGet -Force
 
     # Install oh-my-posh
     Install-Module oh-my-posh -Force
