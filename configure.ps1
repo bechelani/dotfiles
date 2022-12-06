@@ -70,7 +70,7 @@ try {
     Install-Module oh-my-posh -Force
 
     # Install PSReadLine
-    Install-Module PSReadLine -AllowPrerelease -Force
+    Install-Module PSReadLine -Force
 
     # Install Terminal-Icons
     Install-Module Terminal-Icons -Force
