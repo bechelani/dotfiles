@@ -5,7 +5,7 @@
 Run the following to configure Windows 10/11 from scratch...
 
 ```pwsh
-Set-ExecutionPolicy Bypass; irm 'https://raw.githubusercontent.com/bechelani/dotfiles/win/configure.ps1' | iex;
+Set-ExecutionPolicy Bypass; irm 'https://raw.githubusercontent.com/bechelani/dotfiles/windows/configure.ps1' | iex;
 ```
 
 ## macOS Configuration
