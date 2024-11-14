@@ -41,7 +41,7 @@ zshInstall () {
   # zsh install
   # todo add in check for macOS 10.15 since zsh is default
   if test $(which zsh); then
-      succes "zsh is already installed"
+      success "zsh is already installed"
   else
       brew install zsh
       success "zsh installed"
