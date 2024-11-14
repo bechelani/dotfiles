@@ -36,11 +36,11 @@ importAndTrustGpgKey () {
 
   info "raising level trust of public gpg key ($KEYID)"
 
-  echo "$( \
-    gpg --list-keys --fingerprint \
-    | grep $KEYID -A 1 | tail -1 \
-    | tr -d '[:space:]' | awk 'BEGIN { FS = "=" } ; { print $2 }' \
-  ):6:" | gpg --import-ownertrust;
+  #echo "$( \
+  #  gpg --list-keys --fingerprint \
+  #  | grep $KEYID -A 1 | tail -1 \
+  #  | tr -d '[:space:]' | awk 'BEGIN { FS = "=" } ; { print $2 }' \
+  #):6:" | gpg --import-ownertrust;#]
 
   success "gpg key configured"
 }
