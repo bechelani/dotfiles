@@ -28,7 +28,7 @@ brewInstall () {
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     success "brew installed"
   else
-    sucess "brew is already installed"
+    success "brew is already installed"
   fi
 }
 
