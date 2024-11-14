@@ -6,5 +6,5 @@ brew 'git'
 brew 'openssl'
 brew 'gnupg'
 
-cask 'tower'
-cask 'beyond-compare'
+#cask 'tower'
+#cask 'beyond-compare'
