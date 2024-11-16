@@ -18,6 +18,7 @@ cask 'airbuddy'
 cask 'obsidian'
 cask 'gitkraken'
 cask 'sound-control'
+cask 'raycast'
 
 ## App Store
 mas 'Brother iPrint&Scan', id: 1193539993
