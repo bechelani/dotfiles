@@ -119,7 +119,7 @@ dotfilesInstall () {
       echo ""
       cd $HOME/.dotfiles && echo "switched to .dotfiles dir..."
       echo ""
-      echo "Checking out macOS branch..." && git checkout mac -q
+      echo "Checking out macOS branch..." && git checkout mac-aya -q
       echo ""
       echo "Now configuring symlinks..." && $HOME/.dotfiles/script/bootstrap
       echo ""
