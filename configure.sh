@@ -25,7 +25,8 @@ brewInstall () {
 
   if test ! $(which brew); then
     # Install the correct homebrew for each OS type
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
     success "brew installed"
   else
     success "brew is already installed"
@@ -84,17 +85,6 @@ ohmyposhInstall () {
 
   if test $(which oh-my-posh); then
     success "oh-my-posh is already installed"
-    echo
-    read -p "Would you like to update oh-my-posh now? y/n " -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]] ; then
-      brew update && brew upgrade oh-my-posh
-      if [[ $? -eq 0 ]] ; then
-        success "Update complete..."
-      else
-        fail "Update not complete..."
-      fi
-    fi
   else
     echo
     echo "oh-my-posh not found, now installing oh-my-posh..."
@@ -139,6 +129,7 @@ dotfilesInstall () {
 
 # xcode setup
 xcodeInstall
+
 # brew setup
 brewInstall
 brewUpdate
