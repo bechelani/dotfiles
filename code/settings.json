@@ -34,7 +34,7 @@
     "git.enableSmartCommit": true,
     "redhat.telemetry.enabled": false,
     "terminal.integrated.defaultProfile.osx": "pwsh",
-    "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font'",
+    "terminal.integrated.fontFamily": "'CaskaydiaCove NF'",
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.profiles.osx": {
         "bash": {
@@ -92,7 +92,6 @@
         "terminal.ansiWhite": "#CCCCCC",
         "terminal.ansiYellow": "#C19C00"
     },
-    "workbench.colorTheme": "Default Dark+",
     "workbench.sideBar.location": "left",
     "mssql.connections": [
         {
@@ -111,5 +110,7 @@
     ],
     "azureResourceGroups.groupBy": "resourceGroup",
     "vscode-edge-devtools.webhint": false,
-    "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font'"
+    "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font'",
+    "files.autoSave": "afterDelay",
+    "dotnet.preferRuntimeFromSDK": true
 }

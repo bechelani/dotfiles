@@ -43,3 +43,4 @@ unset config_files
 
 # load oh-my-posh
 eval "$(oh-my-posh --init --shell zsh --config ~/.dotfiles/powershell/prompts/simple.json)"
+export PATH="/opt/homebrew/opt/dotnet@6/bin:$PATH"

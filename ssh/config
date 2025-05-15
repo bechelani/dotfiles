@@ -1,7 +1,9 @@
 Host *
+    AddKeysToAgent yes
     ControlMaster auto
     ControlPath  ~/.ssh/sockets/%r@%h-%p
     ControlPersist  600
+    UseKeychain yes
 
 Host github.com
     IdentitiesOnly yes
