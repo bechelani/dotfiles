@@ -113,5 +113,28 @@
     "vscode-edge-devtools.webhint": false,
     "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font'",
     "files.autoSave": "afterDelay",
-    "dotnet.preferRuntimeFromSDK": true
+    "dotnet.preferRuntimeFromSDK": true,
+    // Custom tags for the parser to use
+    "yaml.customTags": [
+        "!And",
+        "!If",
+        "!Not",
+        "!Equals",
+        "!Or",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Join sequence"
+    ],
+    // Enable/disable default YAML formatter (requires restart)
+    "yaml.format.enable": true,
+    "workbench.editor.empty.hint": "hidden",
 }
