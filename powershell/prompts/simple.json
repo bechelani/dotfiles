@@ -46,6 +46,11 @@
           "style": "powerline"
         },
         {
+          "type": "python",
+          "style": "powerline",
+          "template": " {{ .VenvName }} "
+        },
+        {
           "properties": {
             "cache_duration": "none"
           },
