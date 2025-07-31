@@ -69,9 +69,3 @@
   autocorrect = 1
 [init]
   defaultBranch = main
-[user]
-	name = Michel Bechelani
-	email = michelbechelanib@gmail.com
-	signingkey = 0873A11D3A4AC476B07029B7607D2EC1343523AA
-[gpg]
-	format = openpgp
