@@ -15,6 +15,7 @@ git/gitconfig.local.symlink
 vim/bundles/*
 
 secrets.pwsh
+secrets.zsh
 
 Brewfile.lock.json
 
